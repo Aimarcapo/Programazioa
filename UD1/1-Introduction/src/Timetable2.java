@@ -1,36 +1,32 @@
 import java.util.Scanner;
-public class Timetable2 {
+
+public class TimeTable2 {
     public static void main(String[] args) {
-        int n;
+        int size;
         Scanner in = new Scanner(System.in); // Scan the keyboard
-        System.out.print("Enter number "); // No newline for prompting message
-        n = in.nextInt();
-        
-        // Outer loop to print each of the rows
-        for(int i = -1; i <= n; i++) 
-        { 
-            if (i == -1) {
+        System.out.print("Enter size: "); // No newline for prompting message
+        size = in.nextInt();
+        System.out.print("*");
+        for (int x = -1; x <= size; x++) {
+            if (x == -1) {
                 System.out.print("\t|");
-            }
-            else if (i == 0) {
+            } else if (x == 0) {
                 System.out.print("------------");
+            } else if (x > 0) {
+                System.out.printf("%1$d\t|", x);
             }
-            else if (i > 0) {                    
-                System.out.printf("%1$d\t|", i);    
-            }
-            
-            for(int j = 1; j <= n; j++)
-            {        
-                if (i == -1) {
-                    System.out.printf("\t%1$d",j);
+
+            for (int y = 1; y <= size; y++) {
+                
+                 if (x == -1 ) {
+                    System.out.printf("\t%1$d", y);
                     continue;
-                }
-                else if (i == 0) {
+                } else if (x == 0 ) {
                     System.out.print("--------");
                     continue;
                 }
-                
-                System.out.printf("\t%1$d", i * j);
+
+                System.out.printf("\t%1$d", x * y);
             }
             System.out.println();
         }
