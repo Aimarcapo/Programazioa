@@ -8,7 +8,7 @@ public class InputValidation {
       
       Scanner in = new Scanner(System.in);  // Scan the keyboard for input
         // No newline for prompting message
-     
+        in.close();
       // Use a do-while loop controlled by a boolean flag 
       // to repeatably read the input until a valid input is entered
       isValid = false;   // default assuming input is not valid

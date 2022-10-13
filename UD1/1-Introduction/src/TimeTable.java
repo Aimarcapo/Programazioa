@@ -7,6 +7,7 @@ public class TimeTable {
         System.out.print("Enter size: "); // No newline for prompting message
         size = in.nextInt();
         System.out.print("*");
+        in.close();
         for (int x = -1; x <= size; x++) {
             if (x == -1) {
                 System.out.print("\t|");

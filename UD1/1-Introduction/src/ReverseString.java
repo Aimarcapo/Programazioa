@@ -8,12 +8,14 @@ import java.util.Scanner;
     
             Scanner input = new Scanner(System.in);
             System.out.print("Enter a String:  ");
-            String original = input.nextLine();
-    
-            String rev = "";// Initialize as Empty String
-            for(int i = original.length() - 1 ; i>=0 ; i--){
-                rev += original.charAt(i);
+            String inStr = input.nextLine();
+            input.close();
+            String a="";
+            
+            // Initialize as Empty String
+            for(int charIdx  = inStr.length() - 1 ; charIdx >=0 ; charIdx --){
+                a += inStr.charAt(charIdx );
             }
-            System.out.println("Reverse form: "+rev);
+            System.out.println("Reverse form: "+a);
         }
     }

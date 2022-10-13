@@ -11,6 +11,7 @@ public class AverageWithInputValidation {
       int sum = 0;
       double average;
       Scanner in = new Scanner(System.in); 
+      in.close();
       for (int studentNo = 1; studentNo <= NUM_STUDENTS; ++studentNo) {
         // Prompt user for mark with input validation
         

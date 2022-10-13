@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
-public class TimeTable2 {
+public class Timetable2 {
     public static void main(String[] args) {
         int size;
         Scanner in = new Scanner(System.in); // Scan the keyboard
         System.out.print("Enter size: "); // No newline for prompting message
         size = in.nextInt();
         System.out.print("*");
+        in.close();
         for (int x = -1; x <= size; x++) {
             if (x == -1) {
                 System.out.print("\t|");

@@ -6,6 +6,7 @@ public class TriangularPatternA {
         Scanner in = new Scanner(System.in); // Scan the keyboard
         System.out.print("Enter size "); // No newline for prompting message
         size = in.nextInt();
+        in.close();
         // Outer loop to print each of the rows
         for (int row = 1; row <= size; row++) { // row = 1, 2, 3, ..., size
             // Inner loop to print each of the columns of a particular row

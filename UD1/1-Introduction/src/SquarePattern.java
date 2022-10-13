@@ -5,6 +5,7 @@ public class SquarePattern{
         Scanner in = new Scanner(System.in);  // Scan the keyboard
       System.out.print("Enter first integer: ");  // No newline for prompting message
       size = in.nextInt();
+      in.close();
       
         for (int row = 1; row <= size; row++) {  // row = 1, 2, 3, ..., size
             System.out.print("#"); // Inner loop to print each of the columns of a particular row

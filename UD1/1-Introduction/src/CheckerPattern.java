@@ -6,6 +6,7 @@ public class CheckerPattern {
         Scanner in = new Scanner(System.in); // Scan the keyboard
         System.out.print("Enter first integer: "); // No newline for prompting message
         size = in.nextInt();
+        in.close();
 
         for (int row = 1; row <= size; row++) {
             if ((row % 2) == 0) { // row 2, 4, 6, ...
