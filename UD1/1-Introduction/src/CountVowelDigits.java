@@ -6,7 +6,7 @@ public class CountVowelDigits {
             System.out.print("Enter a String:  ");
             String c = input.nextLine();
             input.close();
-            char c=""
+            char c="";
             System.out.println(
                 c + " is a digit -> "
                 + Character.isDigit(c));
