@@ -13,9 +13,9 @@ public static void main(String[] args) {
 
 
   
-  Scanner in = new Scanner(System.in);
+  Scanner input = new Scanner(System.in);
   System.out.print("Enter the number of items: ");
-  numItems = in.nextInt();
+  numItems = input.nextInt();
 
 
   
@@ -26,7 +26,7 @@ public static void main(String[] args) {
 
      for (int i = 0; i < items.length; ++i) {
         System.out.print("Enter the value of all items separated  : ");
-        items[i] = in.nextInt();
+        items[i] = input.nextInt();
 
      }
   }

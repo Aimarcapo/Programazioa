@@ -2,7 +2,7 @@ package arrayak;
 import java.util.Scanner;
 
 
-public class PrintArrayInStars {
+public class GradeStatistics {
     public static void main(String[] args) {
         //Write a program called printArrayInStars which prompts user for the number of items in an array
         //(a non-negative integer), and saves it in an int variable called NUM_ITEMS. 
@@ -16,7 +16,11 @@ public class PrintArrayInStars {
         int NUM_ITEMS;
         int collection[];
         String stars = "";
-
+        int sum=0;
+        int min;
+        int max;
+        
+        int average;
         //Ask for user input for the size of array.
         //Validates that it is a positive int
         do{
@@ -50,17 +54,23 @@ public class PrintArrayInStars {
                 }
             }while(!isValid);
         }
-
+      
         input.close();
-
+        
         //Loop to print the stars.
         for(int i = 0; i < collection.length; i++){
-            for(int p = 0; p<collection[i]; p++){
-                stars = stars + "* ";
-            }
-            System.out.print(i + ": " );
-            System.out.println(stars + "(" + collection[i] + ")");
-            stars = "";
+           
+        
+        
+            sum=sum+collection[i];
+            average=sum/NUM_ITEMS;
+            min=
+            
+            
+            
         }
+        System.out.println("Sum is "+sum );
+        System.out.println("The average is "+average );
+        System.out.println("The average is "+min );
     }
 }
