@@ -85,4 +85,3 @@ public class GradeStatistics {
             System.out.println("The maximum is " + max);
         }
     }
-

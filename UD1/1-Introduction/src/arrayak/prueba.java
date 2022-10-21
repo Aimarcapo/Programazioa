@@ -1,39 +1,53 @@
 package arrayak;
-import javax.swing.JOptionPane;
-public class prueba {
-    
- 
- 
-    public static void main(String[] args) {
-        // create array based on the number of args entered by user
-        String response = JOptionPane.showInputDialog(null, "Number of scores:");
-        int number = Integer.parseInt(response);
-        int scores[] = new int[number];
-        // for loop to convert String args array to integer myArray
-        for (int a = 0; a < number; a++) {
-            response = JOptionPane.showInputDialog(null, "Enter score" + (a + 1));
-            scores[a] = Integer.parseInt(response);
-        }
-        int sum = 0;
-        int largest = Integer.MIN_VALUE;
-        int smallest = Integer.MAX_VALUE;
-        //for loop to find sum, largest and smallest
-        for (int i = 0; i < scores.length; i++) {
-            sum = sum + scores[i];
-            if (scores[i] > largest) {
-                largest = scores[i];
-            }
-            if (scores[i] < smallest) {
-                smallest = scores[i];
-            }
-        }
-        //output
-        JOptionPane.showMessageDialog(null, "The sum is " + sum
-                + "\nThe average is " + sum / scores.length
-                + "\nThe largest score is " + largest
-                + "\nThe smallest score is " + smallest);
- 
-    }
- 
-}
 
+import java.util.Scanner;
+
+public class prueba {
+
+    public static void main(String[] args) {
+
+        final String[] HEX_BITS = { "0000", "0001", "0010", "0011",
+                "0100", "0101", "0110", "0111",
+                "1000", "1001", "1010", "1011",
+                "1100", "1101", "1110", "1111" };
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a Hexadecimal string: ");
+        String hexStr = in.next();
+        Hex2Bin aHex2Bin = new Hex2Bin();
+        if ( ! aHex2Bin.isHex(hexStr)) {
+            System.out.printf("Invalid Hexadecimal string \"%1$s\"\n", hexStr);
+            return;
+        }
+        aHex2Bin.convertHexToBin(hexStr);
+    }
+    
+    /**
+     * 
+     *
+     */
+    private boolean isHex(String hexStr)
+    {
+        for (int i = 0; i < hexStr.length(); i++) {
+            if (0 > Character.digit(hexStr.toLowerCase().charAt(i), 16)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    /**
+     * 
+     * 
+     */
+    private void convertHexToBin(String hexStr)
+    {
+        
+        System.out.printf("The equivalent binary for hexadecimal %1$s is ", hexStr);
+        
+        for (int i = 0; i < hexStr.length(); i++) {
+            int j = Character.digit(hexStr.toLowerCase().charAt(i), 16);
+            System.out.printf("%1$s ", hexStr[j]);
+        }
+        System.out.println();
+    }
+}
