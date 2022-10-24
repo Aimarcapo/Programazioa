@@ -16,10 +16,6 @@ public class GradeStatistics {
         Scanner input = new Scanner(System.in);
         int NUM_ITEMS;
         int collection[];
-        
-        
-        
-    
 
         float average;
         // Ask for user input for the size of array.
@@ -42,7 +38,7 @@ public class GradeStatistics {
         for (int i = 0; i < NUM_ITEMS; i++) {
 
             do {
-                System.out.println("Select the student" + i +"grade");
+                System.out.println("Select the student" + i + "grade");
                 collection[i] = input.nextInt();
 
                 if (collection[i] > 0) {
@@ -54,34 +50,28 @@ public class GradeStatistics {
         }
 
         input.close();
-        int sum=0;
+        int sum = 0;
         int max = Integer.MIN_VALUE;
-        int min  = Integer.MAX_VALUE;
-        
+        int min = Integer.MAX_VALUE;
+
         // Loop to print the stars.
         for (int i = 0; i < collection.length; i++) {
             sum = sum + collection[i];
-            
+
             if (collection[i] > max) {
                 max = collection[i];
             }
             if (collection[i] < min) {
                 min = collection[i];
-                
-            }
-            
 
-                
-            
-            System.out.println("The students grade is: [" + collection [i] + "]");
-           
-           
-           
-               
             }
-            System.out.println("Sum is " + sum);
-            System.out.println("The average is " + sum / collection.length);
-            System.out.println("The minimum is " + min);
-            System.out.println("The maximum is " + max);
+
+            System.out.println("The students grade is: [" + collection[i] + "]");
+
         }
+        System.out.println("Sum is " + sum);
+        System.out.println("The average is " + sum / collection.length);
+        System.out.println("The minimum is " + min);
+        System.out.println("The maximum is " + max);
     }
+}
