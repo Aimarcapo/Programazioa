@@ -5,7 +5,7 @@ public class SumeAverageNumberInt {   // Save as "SumAverageRunningInt.java"
       double average;       // average in double
       final int LOWERBOUND = 1;
       final int UPPERBOUND = 100;
-      double divisor=UPPERBOUND;
+      double divisor=UPPERBOUND; //To have an average with decimals
       // Use a for-loop to sum from lowerbound to upperbound
       for (int number = LOWERBOUND; number <= UPPERBOUND; ++number) {
             // The loop index variable number = 1, 2, 3, ..., 99, 100
