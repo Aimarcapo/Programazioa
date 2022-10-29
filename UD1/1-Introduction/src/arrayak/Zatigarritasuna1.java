@@ -26,4 +26,8 @@ public class Zatigarritasuna {
         }
     }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 23d06930f9eefcf421498bac63d0755eeef2228d

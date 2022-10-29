@@ -69,6 +69,7 @@ public class GradeStatistics {
             System.out.println("The students grade is: [" + collection[i] + "]");
 
         }
+        
         System.out.println("Sum is " + sum);
         System.out.println("The average is " + sum / collection.length);
         System.out.println("The minimum is " + min);
