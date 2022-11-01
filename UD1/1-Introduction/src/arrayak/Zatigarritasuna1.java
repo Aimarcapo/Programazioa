@@ -3,7 +3,7 @@ package arrayak;
 import java.util.IllegalFormatPrecisionException;
 import java.util.Scanner;
 
-public class Zatigarritasuna {
+public class Zatigarritasuna1 {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -25,9 +25,4 @@ public class Zatigarritasuna {
             return false;
         }
     }
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 23d06930f9eefcf421498bac63d0755eeef2228d
