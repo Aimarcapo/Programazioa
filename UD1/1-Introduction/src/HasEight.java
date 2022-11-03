@@ -1,11 +1,8 @@
 
 public class HasEight {
     public static void main(String[] args) {
-    hasEight(7845);
-}
-
-
-
+        hasEight(7845);
+    }
 
     public static boolean hasEight(int number) {
 

@@ -5,7 +5,7 @@ public class gurutzea{
       
       Scanner my_scanner = new Scanner(System.in);
       System.out.print("Sartu zenbakia : ");
-      my_input = my_scanner.nextInt();
+      my_input = my_scanner.nextInt(); 
       my_scanner.close();
 
 
