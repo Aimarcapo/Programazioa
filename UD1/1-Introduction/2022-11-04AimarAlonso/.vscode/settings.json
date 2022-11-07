@@ -1,8 +1,5 @@
 {
-    "java.project.sourcePaths": [
-        "src",
-        "2022-11-04AimarAlonso/src"
-    ],
+    "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar"

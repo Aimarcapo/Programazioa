@@ -8,9 +8,9 @@ public class PrintDayInWord {
         // Using switch-case-default
         switch(day) {
            case 1: 
-              System.out.println( "Monday" ); break;  // Don't forget the "break" after each case!
+              System.out.println( "Monday" );   // Don't forget the "break" after each case!
            case 2: 
-              System.out.println( "Tuesday" ); break;
+              System.out.println( "Tuesday" ); 
             case 3: 
               System.out.println( "Wedsnay" ); break;
             case 4: 
