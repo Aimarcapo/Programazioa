@@ -19,7 +19,22 @@ public class Circle {    // Save as "Circle.java"
       radius = r;
       color = c;
    }
-
+   
+   public String toString() {
+      return "Circle[radius=" + radius + ",color=" + color + "]";
+   }
+// Setter for color
+public void setColor(String newColor) {
+   color = newColor;
+}
+   
+// Setter for radius
+public void setRadius(double newRadius) {
+   radius = newRadius;
+}
+public String toString2() {
+   return "Circle[radius=" + radius + ",color=" + color + "]";
+}
    // Public methods
    /** Returns the radius */
    public double getRadius() {  // getter for radius
