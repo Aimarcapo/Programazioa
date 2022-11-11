@@ -1,4 +1,5 @@
 public class TestCircle { // Save as "TestCircle.java"
+   
    public static void main(String[] args) { // Program entry point
       // Declare and Construct an instance of the Circle class called c1
       Circle c1 = new Circle(2.0, "blue"); // Use 3rd constructor
@@ -44,12 +45,14 @@ public class TestCircle { // Save as "TestCircle.java"
       System.out.printf("%10s %12.2f %10s %16.2f\n", "c4", c4.getRadius(), c4.getColor(), c4.getArea());
       System.out.println("Azken zirkulua" + c4);
      for(int i=1;i<=10;i++){
-      double radius=c1.getRadius();
-      radius++;
-      if(i%6==0){
-         String newColor=c1.getColor();
+      System.out.println("Azken zirkulua" + c1);
+      c1.setRadius(c1.getRadius()+1);
+    
+      if(i==6){
+         c1.setColor("Magenta");
       }
      }
+     
    }
 
 }
