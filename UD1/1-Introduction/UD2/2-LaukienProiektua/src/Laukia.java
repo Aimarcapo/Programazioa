@@ -79,4 +79,13 @@ public class Laukia {
          
       }
    }
+   public void marraztuBeteta(char ikurra) {
+      for (int i = 1; i <= altuera; i++) {
+         for (int z = 1; z <= zabalera; z++) {
+            System.out.print(ikurra);
+         }
+
+         System.out.println("");
+      }
+   }
 }

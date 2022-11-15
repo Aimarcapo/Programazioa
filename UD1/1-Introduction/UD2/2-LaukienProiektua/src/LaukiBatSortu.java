@@ -7,10 +7,13 @@ public class LaukiBatSortu {
         Scanner sc = new Scanner(System.in);
         int zabalera;
         int altuera;
+        String ikurra;
         System.out.println("Sartu laukoaren zabalera ");
         zabalera = sc.nextInt();
         System.out.print("Sartu laukiaren altuera");
         altuera = sc.nextInt();
+        System.out.print("Sartu laukiaren altuera");
+        ikurra=sc.next();
         sc.close();
         Laukia l1 = new Laukia(zabalera, altuera);
 
@@ -23,6 +26,9 @@ public class LaukiBatSortu {
         l1.marraztuBeteta();
         System.out.println("Honela hutsik");
         l1.marraztuHutsik();
+        System.out.println("Honela marraztuta");
+        char c=ikurra.charAt(0);
+        l1.marraztuBeteta(c);
 
 
     }
