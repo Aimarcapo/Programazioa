@@ -1,17 +1,22 @@
 import java.util.Scanner;
 
 public class Menua {
+    private static final int LAUKI_KOP=10;
+    private static Laukia[] laukiak = new Laukia[10];
+    private static  Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+       
         boolean salir = false;
         int zenbakia; //Guardaremos la opcion del usuario
        String beteta;
-        int[] laukia = new int[2];
-        laukia[0]=2;
-        laukia[1]=4;
-        int zabalera=laukia[0];
-        int altuera=laukia[1];
-        Laukia l1 = new Laukia(zabalera, altuera);
+       int kont;
+       
+       int sortutakoak=0;
+         
+        
+        int zabalera;
+        int altuera;
+       
         while(!salir){
        
         
@@ -31,45 +36,40 @@ public class Menua {
        
        switch(zenbakia){
         case 1:
-        
-        
-        System.out.println("Lauki berria sortzen");
-        System.out.println("Sartu laukiaren zabalera:"+zabalera);
-        System.out.println("Sartu laukiaren altuera:"+altuera);
-    
-        
+        sortu();
 
         break;
     case 2:
    
-        System.out.println("Has seleccionado la opcion 2");
-        System.out.printf("%10s %10s %12s %10s %10s  %15s\n", "Laukia","Zabalera", "Altuera", "Azalera", "Perimetroa", "Mota");
-        System.out.println("==============================================================================\n");
-        System.out.printf("%5d %12d %10d %10d %10d %18s\n",1,zabalera,altuera,
-                    l1.getAzalera(), l1.getPerimetroa() , l1.getMota());
-           
-            
+       
+           imprimatu(); 
            
                     
         
         break;
     case 3:
-    
+    int z;
         System.out.println("Zenbatgarren laukia nahi duzu marraztu?");
+        z=sc.nextInt();
         System.out.printf("Beteta ala hutsik");
         beteta=sc.next();
-        if(beteta==B){
-            l1.marraztuBeteta();
+        z=z-1;
+        if(beteta.charAt(0)=='B'){
+            laukiak[z].marraztuBeteta();
         }
-        else if(beteta==H){
-            l1.marraztuHutsik();
+        else if(beteta.charAt(0)=='H'){
+            laukiak[z].marraztuHutsik();
         }
         else{
         System.out.println("Idatzi H edo B");
         }
         break;
     case 4:
-    System.out.println("Has seleccionado la opcion 4");
+    int n;
+    System.out.println("Aukeratu zenbaki bat");
+    n=sc.nextInt();
+    n=n-1;
+    System.out.println("Laukirik handiena hau da: "+laukiak[n].getMota()+"[" + laukiak[n].getAltuera()+"x"+laukiak[n].getZabalera()+"]");
     break;
         case 5:
         salir = true;
@@ -78,8 +78,33 @@ public class Menua {
         System.out.println("Solo números entre 1 y 5");
 
 
-       }
+      
     }
+   public static void sortu(){
+    if(sortutakoak<LAUKI_KOP){
+        System.out.println("Lauki berria sortzen");
+        System.out.println("Sartu laukiaren zabalera:");
+        zabalera=sc.nextInt();
+        System.out.println("Sartu laukiaren altuera:");
+        altuera=sc.nextInt();
+        laukiak[sortutakoak]=new Laukia(zabalera,altuera);
+        sortutakoak++;
+        }
+        else{
+            System.out.print("Ezin dira lauki gehiago sartu");
+        }
+   }
+      public static void imprimatu() {
+        System.out.println("Has seleccionado la opcion 2");
+        System.out.printf("%10s %10s %12s %10s %10s  %15s\n", "Laukia","Zabalera", "Altuera", "Azalera", "Perimetroa", "Mota");
+        System.out.println("==============================================================================\n");
+        for (int i = 0,x=1; i < laukiak.length; i++,x++ ){
+        System.out.printf("%5d %12d %10d %10d %10d %18s\n",x,laukiak[i].getZabalera(),laukiak[i].getAltuera(),
+                    laukiak[i].getAzalera(), laukiak[i].getPerimetroa() , laukiak[i].getMota());
+        }
+      }
+       
 }
     }
+}
 
