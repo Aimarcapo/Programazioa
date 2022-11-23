@@ -1,6 +1,7 @@
 public class Laukia {
    private int altuera;
    private int zabalera;
+   int maxPerimetroa = Integer.MIN_VALUE;
 
    public Laukia() { // 1st Constructor (default constructor)
       altuera = 5;
@@ -26,6 +27,10 @@ public class Laukia {
    }
 
    public int getPerimetroa() {
+      return (altuera * 2) + (zabalera * 2);
+   }
+
+   public int getmaxPerimetroa() {
       return (altuera * 2) + (zabalera * 2);
    }
 
@@ -66,19 +71,19 @@ public class Laukia {
    public void marraztuHutsik() {
       for (int i = 1; i <= altuera; i++) {
          for (int z = 1; z <= zabalera; z++) {
-            
+
             if (i == 1 || i == altuera ||
-            z == 1 || z == zabalera) {          
-            System.out.print("*"); 
+                  z == 1 || z == zabalera) {
+               System.out.print("*");
+            } else {
+               System.out.print(" ");
             }
-            else{
-            System.out.print(" ");   
          }
-      }
-      System.out.println("");
-         
+         System.out.println("");
+
       }
    }
+
    public void marraztuBeteta(char ikurra) {
       for (int i = 1; i <= altuera; i++) {
          for (int z = 1; z <= zabalera; z++) {
@@ -87,5 +92,24 @@ public class Laukia {
 
          System.out.println("");
       }
+   }
+
+   public boolean isBiggerThan(Laukia x){
+      boolean bigger=false;
+      if(this.getAzalera()>x.getAzalera()){
+
+         bigger=true;
+   }
+   return bigger;
+}
+
+   public static Laukia getTheBiggest(Laukia[] laukiak) {
+      Laukia max = laukiak[0];
+      for (int i = 1; i < laukiak.length && laukiak[i] != null; i++) {
+         if (laukiak[i].isBiggerThan(max)) {
+            max = laukiak[i];
+         }
+      }
+      return max;
    }
 }
