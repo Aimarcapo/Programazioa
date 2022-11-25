@@ -10,6 +10,9 @@ public class TestZatikia {
         zat2=new Zatikia(2,11);
         System.out.println(zat2);
         System.out.println(Zatikia.biderkatu(zat1,zat2));
+        System.out.println(Zatikia.batu(zat1,zat2));
+        System.out.println(zat1.hamartarBaliokidea());
+        
         
 }
 }
