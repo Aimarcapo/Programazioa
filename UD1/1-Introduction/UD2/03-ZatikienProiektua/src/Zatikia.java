@@ -48,26 +48,40 @@ public class Zatikia {
 
     public static Zatikia batu(Zatikia zat1, Zatikia zat2) {
         Zatikia zat4;
-        zat4 = new Zatikia(zat1.getZenbakitzailea()*zat2.getIzendatzailea() + zat2.getZenbakitzailea()*zat1.getIzendatzailea(),
-                zat1.getIzendatzailea()*zat2.getIzendatzailea() );
+        zat4 = new Zatikia(
+                zat1.getZenbakitzailea() * zat2.getIzendatzailea() + zat2.getZenbakitzailea() * zat1.getIzendatzailea(),
+                zat1.getIzendatzailea() * zat2.getIzendatzailea());
         return zat4;
 
     }
 
-    public void batu(Zatikia zat1) {
-        zat1 = new Zatikia(zat1.getZenbakitzailea() + zat2.getZenbakitzailea());
+    public void batu(Zatikia besteZatbat) {
+        this.zenbakitzailea = this.zenbakitzailea * besteZatbat.izendatzailea
+                + this.izendatzailea * besteZatbat.zenbakitzailea;
+                this.izendatzailea=this.izendatzailea*besteZatbat.zenbakitzailea;
 
     }
 
     public double hamartarBaliokidea() {
-        return (double) zenbakitzailea / izendatzailea;
+        double baliokidea;
+        baliokidea = (this.zenbakitzailea / this.izendatzailea);
+        return baliokidea;
     }
-    public boolean isBiggerThan(Zatikia x){
-        boolean bigger=false;
-        if(this.hamartarBaliokidea()>x.hamartarBaliokidea()){
-  
-           bigger=true;
-     }
-     return bigger;
-  }
+
+    public boolean isBaliokidea(Zatikia z) {
+        boolean baliokideaa = false;
+        if (this.zenbakitzailea % this.izendatzailea != 0) {
+            baliokideaa = true;
+        }
+        return baliokideaa;
+    }
+
+    public boolean isBiggerThan(Zatikia x) {
+        boolean bigger = false;
+        if (this.hamartarBaliokidea() > x.hamartarBaliokidea()) {
+
+            bigger = true;
+        }
+        return bigger;
+    }
 }
