@@ -63,25 +63,28 @@ public class Zatikia {
     }
 
     public double hamartarBaliokidea() {
-        double baliokidea;
-        baliokidea = (this.zenbakitzailea / this.izendatzailea);
-        return baliokidea;
+       return (double) this.zenbakitzailea/this.izendatzailea;
     }
 
     public boolean isBaliokidea(Zatikia z) {
-        boolean baliokideaa = false;
-        if (this.zenbakitzailea % this.izendatzailea != 0) {
-            baliokideaa = true;
-        }
-        return baliokideaa;
+       
+        return this.hamartarBaliokidea()==z.hamartarBaliokidea();
     }
 
-    public boolean isBiggerThan(Zatikia x) {
+    public boolean isBiggerThan(Zatikia besteZatikiBat) {
         boolean bigger = false;
-        if (this.hamartarBaliokidea() > x.hamartarBaliokidea()) {
+        if (this.hamartarBaliokidea() > besteZatikiBat.hamartarBaliokidea()) {
 
             bigger = true;
         }
         return bigger;
+    }
+    public Zatikia(String zatIdatzia){
+        
+        int digit1=zatIdatzia.indexOf('/');
+        String zenb= zatIdatzia.substring(0, digit1);
+        String izen=zatIdatzia.substring(digit1+1);
+         zenbakitzailea=Integer.parseInt(zenb);
+        izendatzailea=Integer.parseInt(izen);
     }
 }
