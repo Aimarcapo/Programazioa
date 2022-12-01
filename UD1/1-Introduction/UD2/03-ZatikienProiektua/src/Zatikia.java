@@ -58,17 +58,17 @@ public class Zatikia {
     public void batu(Zatikia besteZatbat) {
         this.zenbakitzailea = this.zenbakitzailea * besteZatbat.izendatzailea
                 + this.izendatzailea * besteZatbat.zenbakitzailea;
-                this.izendatzailea=this.izendatzailea*besteZatbat.zenbakitzailea;
+        this.izendatzailea = this.izendatzailea * besteZatbat.zenbakitzailea;
 
     }
 
     public double hamartarBaliokidea() {
-       return (double) this.zenbakitzailea/this.izendatzailea;
+        return (double) this.zenbakitzailea / this.izendatzailea;
     }
 
     public boolean isBaliokidea(Zatikia z) {
-       
-        return this.hamartarBaliokidea()==z.hamartarBaliokidea();
+
+        return this.hamartarBaliokidea() == z.hamartarBaliokidea();
     }
 
     public boolean isBiggerThan(Zatikia besteZatikiBat) {
@@ -79,12 +79,25 @@ public class Zatikia {
         }
         return bigger;
     }
-    public Zatikia(String zatIdatzia){
-        
-        int digit1=zatIdatzia.indexOf('/');
-        String zenb= zatIdatzia.substring(0, digit1);
-        String izen=zatIdatzia.substring(digit1+1);
-         zenbakitzailea=Integer.parseInt(zenb);
-        izendatzailea=Integer.parseInt(izen);
+
+    public Zatikia(String zatIdatzia) {
+
+        int digit1 = zatIdatzia.indexOf('/');
+        String zenb = zatIdatzia.substring(0, digit1);
+        String izen = zatIdatzia.substring(digit1 + 1);
+        zenbakitzailea = Integer.parseInt(zenb);
+        izendatzailea = Integer.parseInt(izen);
+    }
+
+    public void  sinplifikatu() {
+        int z=izendatzailea;
+        int n=zenbakitzailea;
+        for (int i = 1; i <= izendatzailea; i++) {
+            if (izendatzailea % i == 0 && zenbakitzailea % i == 0) {
+                izendatzailea = z / i;
+                zenbakitzailea = n / i;
+            }
+        }
+
     }
 }

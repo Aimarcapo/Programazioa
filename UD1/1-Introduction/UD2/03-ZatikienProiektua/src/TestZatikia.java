@@ -16,7 +16,7 @@ public class TestZatikia {
         System.out.println(Zatikia.biderkatu(zat1, zat2));
         System.out.println(Zatikia.batu(zat1, zat2));
         System.out.println(zat1.isBaliokidea(zat2));
-       System.out.println(); Zatikia z4=new Zatikia("7/12");
+       System.out.println(new Zatikia("7/12"));
         
 
     }
