@@ -3,8 +3,9 @@
         "src",
         "2-LaukienProiektua/src",
         "1-CIrcleProject/src",
+        "03-ZatikienProiektua/src",
         "00-ARIKETAGEHIGARRIAK/src/random",
-        "03-ZatikienProiektua/src"
+        "00-ARIKETAGEHIGARRIAK/src"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
