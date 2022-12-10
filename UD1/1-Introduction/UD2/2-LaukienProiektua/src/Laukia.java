@@ -43,7 +43,7 @@ public class Laukia {
    }
 
    public String toString() {
-      return "Circle[radius=" + altuera + ",color=" + zabalera + "]";
+      return "Laukia[altuera=" + altuera + ",zabalera=" + zabalera + "]";
    }
 
    public String getMota() {

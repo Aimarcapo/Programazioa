@@ -5,7 +5,8 @@
         "1-CIrcleProject/src",
         "03-ZatikienProiektua/src",
         "00-ARIKETAGEHIGARRIAK/src/random",
-        "00-ARIKETAGEHIGARRIAK/src"
+        "00-ARIKETAGEHIGARRIAK/src",
+        "Account/src/exekutagarria"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [

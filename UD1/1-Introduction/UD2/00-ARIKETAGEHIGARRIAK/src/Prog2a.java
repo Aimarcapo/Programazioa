@@ -1,4 +1,4 @@
-public class Prog2 {
+public class Prog2a {
     
     public static void main(String[] args) {
         int[] zenbakiak = {1, 15, 2};
