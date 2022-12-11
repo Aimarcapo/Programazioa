@@ -11,36 +11,37 @@ public class Ariketa {
         Scanner in = new Scanner(System.in);
         System.out.println("ARIKETA");
         System.out.println("=======");
+
         do {
             int eragiketa = (int) (Math.random() * 2 + 1);
-            System.out.println(eragiketa);
             Zatikia zat1 = new Zatikia();
             Zatikia zat2 = new Zatikia();
             Zatikia erantzuna;
             if (eragiketa == 1) {
-                System.out.println(zat1 + "+" + zat2 + "=");
-                erantzuna = new Zatikia(in.next());
-                if (erantzuna.hamartarBaliokidea() == Zatikia.batu(zat1, zat2).hamartarBaliokidea()) {
+                System.out.print(zat1 + "+" + zat2 + "=");
+                erantzuna = new Zatikia(in.next());//Erantzuna erregistratzeko balio du
+                if (Zatikia.batu(zat1, zat2).hamartarBaliokidea() == erantzuna.hamartarBaliokidea()) {
                     zuzena = true;
-                    System.out.println("Oso ondo!");
+                    System.out.println("Oso ondo");
                 } else {
+                    System.out.println("Saiatu Berriz!!");
                     zuzena = false;
-                    System.out.println("Saiatu berriro");
-                }
 
-            } else {
-                System.out.println(zat1 + "x" + zat2 + "=");
-                erantzuna = new Zatikia(in.next());
-                if (erantzuna.hamartarBaliokidea() == Zatikia.biderkatu(zat1, zat2).hamartarBaliokidea()) {
-                    zuzena = true;
-                    System.out.println("Oso ondo!");
-                } else {
-                    zuzena = false;
-                    System.out.println("Saiatu berriro");
                 }
             }
-            in.close();
-        } while (!zuzena);
-
+            else{
+                System.out.print(zat1+"*"+zat2+"=");
+                erantzuna=new Zatikia(in.next());//Erantzuna erregistratzeko balio du
+                if(Zatikia.biderkatu(zat1, zat2).hamartarBaliokidea()==erantzuna.hamartarBaliokidea()){
+                    zuzena=true;
+                    System.out.println("Oso ondo");
+                }
+                else{
+                    System.out.println("Saiatu berriro");
+                    zuzena=false;
+                }
+            }
+        } while (!zuzena);//Zuzena false bezala deklaratu dugunez hasieran zuzena true izatera pasatzerakoan do while bukatu egingo da
+in.close();
     }
 }

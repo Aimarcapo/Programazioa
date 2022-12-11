@@ -20,13 +20,14 @@ public class Kalkulagailua {
         System.out.print("bigarren lehen zatikia: ");
         zat2 = new Zatikia(in.next());
         System.out.print("Aukeratu eragiketa (+ edo x): ");
-        eragiketa = in.next().charAt(0);
+        eragiketa = in.next().charAt(0);// Con in.next se guarda como un scanner y luego el charat sirve para que el
+                                        // scanner sepa que posicion tiene que tomar en cuenta en este caso como es 0 solo tomara en cuenta el primer char
         in.close();
 
-        if(eragiketa == '+'){
+        if (eragiketa == '+') {
             emaitza = Zatikia.batu(zat1, zat2);
             System.out.println(zat1 + " + " + zat2 + " = " + emaitza);
-        } else{
+        } else {
             emaitza = Zatikia.biderkatu(zat1, zat2);
             System.out.println(zat1 + " x " + zat2 + " = " + emaitza);
         }
