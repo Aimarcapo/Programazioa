@@ -10,5 +10,9 @@ public class Proba3 {
         String estrina="64";
         int nl=Integer.parseInt(estrina);
         System.out.println(nl);
+        for(int i=0;i<=10;i++){
+        int eragiketa =(int)(Math.random()*4+2);
+        System.out.println(eragiketa);
     }
+}
 }
