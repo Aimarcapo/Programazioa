@@ -1,12 +1,11 @@
 {
     "java.project.sourcePaths": [
-        "Account/src/exekutagarria",
         "2-LaukienProiektua/src",
         "1-CIrcleProject/src",
         "03-ZatikienProiektua/src",
         "00-ARIKETAGEHIGARRIAK/src/random",
         "00-ARIKETAGEHIGARRIAK/src",
-        "4-LangileenProiektua/src/exekutagarria"
+        "2021-11-19Hasierakoa/src/exekutagarriak"
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [

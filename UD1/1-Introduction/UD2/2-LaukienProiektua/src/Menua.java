@@ -81,6 +81,7 @@ public class Menua {
             System.out.printf("%5d %12d %10d %10d %10d %18s\n", x, laukiak[i].getZabalera(), laukiak[i].getAltuera(),
                     laukiak[i].getAzalera(), laukiak[i].getPerimetroa(), laukiak[i].getMota());
         }
+        
     }
 
     public static void marraztu() {

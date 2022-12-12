@@ -2,7 +2,7 @@ package exekutagarria;
 
 import java.util.Scanner;
 
-import model.Zatikia;
+import model.Zatikia;//Zatikia modeloa erabili ahal izateko
 
 public class Azterketa {
     public static void main(String[] args) throws InterruptedException {// throws Interrupted Exception sirve para luego
@@ -16,7 +16,7 @@ public class Azterketa {
         for (int i = 0; i < 10; i++) {// Con esto va sumando el numero de la galdera a la vez que repite el proceso de
                                       // cada ariketa hasta que haya habido 10 repeticiones
             // Es decir 10 ejercicios
-            int eragiketa = (int) (Math.random() * 2 + 1);
+            int eragiketa = (int) (Math.random() * 2 + 1);//Zenbaki random atertzeko balio du
             Zatikia zat1 = new Zatikia();
             Zatikia zat2 = new Zatikia();
             Zatikia erantzuna;
