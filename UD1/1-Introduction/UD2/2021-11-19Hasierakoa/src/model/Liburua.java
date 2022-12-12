@@ -86,6 +86,19 @@ public class Liburua {
     }
 
     public String getGaia() {
+        gaia.toLowerCase();
+        switch(gaia){
+            case "fikzioa":
+                this.gaia = "Fikzioa";
+                break;
+            case "historikoa":
+                this.gaia = "Historikoa";
+                break;
+            default:
+                this.gaia = "Bestelakoa";
+                break;
+        }
+    
         return gaia;
     }
 
@@ -102,46 +115,62 @@ public class Liburua {
     }
 
     public char getHizkuntza() {
-        switch(hizkuntza){
-       case 'e':
-       case 'E'://con dos cases a la vez en este caso case e y case E significa que es un mismo caso para distintas condiciones
-       hizkuntza='E';//char se pone con' '  y no ""
-       break;
-        case 'i':
-        case 'I':
-        hizkuntza='I';
-        break;
+        switch (hizkuntza) {
+            case 'e':
+            case 'E':// con dos cases a la vez en este caso case e y case E significa que es un mismo
+                     // caso para distintas condiciones
+                hizkuntza = 'E';// char se pone con' ' y no ""
+                break;
+            case 'i':
+            case 'I':
+                hizkuntza = 'I';
+                break;
+            case 'g':
+            case 'G':
+                hizkuntza = 'G';
+                break;
+            default:
+
+                hizkuntza = '-';
+        }
+return hizkuntza;
+        
+    }
+    public void setHizkuntza(char hizkuntz) {
+    switch(hizkuntza){
+        case 'e':
+            this.hizkuntza = 'E';
+            break;
+        case 'E':
+            this.hizkuntza = 'E';
+            break;
         case 'g':
+            this.hizkuntza = 'G';
+            break;
         case 'G':
-        hizkuntza='G';
-        break;
-        if(hizkuntza=="e"|| hizkuntza=="E"){
-            hizkuntza="E";
-        }
-        else if(hizkuntza="g"||hizkuntza="G"){
-            hizkuntza="G";
-        }
-        else if(hizkuntza="i"||hizkuntza="I"){
-            hizkuntza="I";
-        }
-        else{
-            hizkuntza="-";
-        }
-        return hizkuntza;
+            this.hizkuntza = 'G';
+            break;
+        case 'i':
+            this.hizkuntza = 'I';
+            break;
+        case 'I':
+            this.hizkuntza = 'I';
+            break;
+        default:
+            this.hizkuntza = '-';
+            break;
+    }
+    if(hizkuntza == 'e' || hizkuntza == 'E'){
+        hizkuntza = 'E';
+    } else if(hizkuntza == 'g' || hizkuntza == 'G'){
+        hizkuntza = 'G';
+    } else if(hizkuntza == 'i' || hizkuntza == 'I'){
+        hizkuntza = 'I';
+    } else{
+        hizkuntza = '-';
+    }
     
 }
-
-    /**
-     * Parametro bezala 'e' edo 'E' pasatzen badigute, 'E' balioa emango diogu
-     * atributoari. Parametro bezala 'g' edo 'G' pasatzen badigute, 'G' balioa
-     * emango diogu atributoari. Parametro bezala 'i' edo 'I' pasatzen badigute,
-     * 'I' balioa emango diogu atributoari. Bestela, '-' balioa emango diogu
-     * atributoari.
-     *
-     */
-    public void setHizkuntza(char hizkuntza) {
-        // METODO HAU OSATU BEHAR DUZU
-    }
 
     public double getPrezioa() {
         return prezioa;
@@ -152,10 +181,19 @@ public class Liburua {
      * honek. Izartxo bat euroko eta zentimo solteak kontutan izan gabe.
      */
     public String getPrezioaIzartxotan(String z) {
-
-        // METODO HAU ALDATU BEHAR DUZU
-        return "";
+        int i = 0;
+        String izarrak = "*";
+        while(i<=this.getPrezioa()){
+            i++;
+        }
+        for(;i>1; i--){
+            izarrak += "*";
+        }
+        return izarrak;
     }
+        // METODO HAU ALDATU BEHAR DUZU
+    
+    
 
     public void setPrezioa(double prezioa) {
         this.prezioa = prezioa;
@@ -168,9 +206,13 @@ public class Liburua {
      * "FLiuElbosq", "FTolkienTheHob", "FTolkienTheLor", "BElorriagaMatxin",...
      */
     public String getKodea() {
-        // METODO HAU ALDATU BEHAR DUZU
-        return "";
+        if(this.getIzenburua().length()<5){
+            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua();
+        } else{
+            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua().substring(0, 5);
+        }        
     }
+    
 
     /**
      * Liburutegian momentu jakin batean dauden liburuen katalogoa itzultzen du.

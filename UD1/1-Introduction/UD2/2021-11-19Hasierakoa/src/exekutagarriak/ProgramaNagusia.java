@@ -62,34 +62,35 @@ public class ProgramaNagusia {
 
         }
     }
-    // METODO HAU OSATU BEHAR DUZU
 
     public static void liburuenDatuGuztiakIkusi() {
-        // METODO HAU OSATU BEHAR DUZU
-        // ...
-        int batura=0;
-        
-        System.out.printf("%-3s %-20s %-15s %10s %4s %-11s %5s %-6s %-15s\n", "Z.", "Izenburua", "Egilea", "O.", "U.",
+        double batazbestekoa = 0;
+        int x = 0;
+        System.out.printf("%-3s %-30s %-20s %4s %4s %-11s %1s %-6s %-15s\n", "Z.", "Izenburua", "Egilea", "O.", "U.",
                 "G.", "H.", "P.", "K.");
-        System.out
-                .println("========================================================================================\n");
         for (int i = 0; i < 100; i++) {
-            if (liburuak[i] != null) {
-              
-                System.out.printf("%-3s %-20s %-15s %10s %4s %-11s %5s %-6s %-15s  \n", i, liburuak[i].getIzenburua(),
-                        liburuak[i].getEgilea(), liburuak[i].getOrriKopurua(), liburuak[i].getUrtea(),
-                        liburuak[i].getGaia(), liburuak[i].getHizkuntza(), liburuak[i].getPrezioa(),
-                        liburuak[i].getKodea());
-                        batura=batura+liburuak[i].getOrriKopurua();
-                        
-            } 
+            System.out.print("=");
         }
-        System.out.println("-------------------------------------------------------------------------------");
+        System.out.println("");
+        for (int i = 0; i < liburuak.length; i++) {
+            if (liburuak[i] != null) {
+                System.out.printf("%-3d %-30s %-20s %4d %4d %-11s %1s %-6.2f %-15s\n", (i + 1),
+                        liburuak[i].getIzenburua(), liburuak[i].getEgilea(), liburuak[i].getOrriKopurua(),
+                        liburuak[i].getUrtea(), liburuak[i].getGaia(), liburuak[i].getHizkuntza(),
+                        liburuak[i].getPrezioa(), liburuak[i].getKodea());
+                x++;
+                batazbestekoa += liburuak[i].getOrriKopurua();
+            }
+        }
+        batazbestekoa = batazbestekoa / x;
+
         for (int i = 0; i < 100; i++) {
-            
-        System.out.println((double)batura);
+            System.out.print("=");
+        }
+        System.out.println("");
+        System.out.printf("%30sLiburuen batez besteko orri kopurua: %.2f \n", " ", batazbestekoa);
     }
-    }
+
     public static void liburuenPrezioaIrudikatu() {
         // METODO HAU OSATU BEHAR DUZU
     }
