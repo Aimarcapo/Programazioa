@@ -13,6 +13,7 @@ public class Proba3 {
         for(int i=0;i<=10;i++){
         int eragiketa =(int)(Math.random()*4+2);
         System.out.println(eragiketa);
+      
     }
 }
 }

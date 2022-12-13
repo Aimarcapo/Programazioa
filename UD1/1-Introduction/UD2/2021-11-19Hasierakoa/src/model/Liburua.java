@@ -87,7 +87,7 @@ public class Liburua {
 
     public String getGaia() {
         gaia.toLowerCase();
-        switch(gaia){
+        switch (gaia) {
             case "fikzioa":
                 this.gaia = "Fikzioa";
                 break;
@@ -98,7 +98,7 @@ public class Liburua {
                 this.gaia = "Bestelakoa";
                 break;
         }
-    
+
         return gaia;
     }
 
@@ -115,62 +115,37 @@ public class Liburua {
     }
 
     public char getHizkuntza() {
+
+        return hizkuntza;
+
+    }
+
+    public void setHizkuntza(char hizkuntz) {
         switch (hizkuntza) {
             case 'e':
-            case 'E':// con dos cases a la vez en este caso case e y case E significa que es un mismo
-                     // caso para distintas condiciones
-                hizkuntza = 'E';// char se pone con' ' y no ""
+                this.hizkuntza = 'E';
                 break;
-            case 'i':
-            case 'I':
-                hizkuntza = 'I';
+            case 'E':
+                this.hizkuntza = 'E';
                 break;
             case 'g':
+                this.hizkuntza = 'G';
+                break;
             case 'G':
-                hizkuntza = 'G';
+                this.hizkuntza = 'G';
+                break;
+            case 'i':
+                this.hizkuntza = 'I';
+                break;
+            case 'I':
+                this.hizkuntza = 'I';
                 break;
             default:
-
-                hizkuntza = '-';
+                this.hizkuntza = '-';
+                break;
         }
-return hizkuntza;
-        
+
     }
-    public void setHizkuntza(char hizkuntz) {
-    switch(hizkuntza){
-        case 'e':
-            this.hizkuntza = 'E';
-            break;
-        case 'E':
-            this.hizkuntza = 'E';
-            break;
-        case 'g':
-            this.hizkuntza = 'G';
-            break;
-        case 'G':
-            this.hizkuntza = 'G';
-            break;
-        case 'i':
-            this.hizkuntza = 'I';
-            break;
-        case 'I':
-            this.hizkuntza = 'I';
-            break;
-        default:
-            this.hizkuntza = '-';
-            break;
-    }
-    if(hizkuntza == 'e' || hizkuntza == 'E'){
-        hizkuntza = 'E';
-    } else if(hizkuntza == 'g' || hizkuntza == 'G'){
-        hizkuntza = 'G';
-    } else if(hizkuntza == 'i' || hizkuntza == 'I'){
-        hizkuntza = 'I';
-    } else{
-        hizkuntza = '-';
-    }
-    
-}
 
     public double getPrezioa() {
         return prezioa;
@@ -183,19 +158,24 @@ return hizkuntza;
     public String getPrezioaIzartxotan(String z) {
         int i = 0;
         String izarrak = "*";
-        while(i<=this.getPrezioa()){
+        while (i <= this.getPrezioa()) {
             i++;
         }
-        for(;i>1; i--){
+        int j = i - 1;
+        for (; j > 1; j--) {
+            /**
+             * De esta manera si omities la parte de int pero pones su ";" entonces sera un
+             * for normal pero sin declarar una nueva variable y deberas usar una ya creada
+             */
+
             izarrak += "*";
+
         }
         return izarrak;
     }
-        // METODO HAU ALDATU BEHAR DUZU
-    
-    
+    // METODO HAU ALDATU BEHAR DUZU
 
-    public void setPrezioa(double prezioa) {
+    public void setPrezioa(double prezioa) {/* Void esan nahi duela ez duela ezer bueltatzen */
         this.prezioa = prezioa;
     }
 
@@ -206,13 +186,16 @@ return hizkuntza;
      * "FLiuElbosq", "FTolkienTheHob", "FTolkienTheLor", "BElorriagaMatxin",...
      */
     public String getKodea() {
-        if(this.getIzenburua().length()<5){
-            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua();
-        } else{
-            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua().substring(0, 5);
-        }        
+        if (this.getIzenburua().length() < 5) {
+            return this.getGaia().charAt(0)
+                    + this.getEgilea().substring(this.getEgilea().indexOf(" ") + 1, this.getEgilea().length())
+                    + this.getIzenburua();
+        } else {
+            return this.getGaia().charAt(0)
+                    + this.getEgilea().substring(this.getEgilea().indexOf(" ") + 1, this.getEgilea().length())
+                    + this.getIzenburua().substring(0, 5);
+        }
     }
-    
 
     /**
      * Liburutegian momentu jakin batean dauden liburuen katalogoa itzultzen du.

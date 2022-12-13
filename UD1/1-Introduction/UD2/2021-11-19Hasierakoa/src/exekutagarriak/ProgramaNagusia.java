@@ -68,12 +68,22 @@ public class ProgramaNagusia {
         int x = 0;
         System.out.printf("%-3s %-30s %-20s %4s %4s %-11s %1s %-6s %-15s\n", "Z.", "Izenburua", "Egilea", "O.", "U.",
                 "G.", "H.", "P.", "K.");
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 100; i++) {/**
+                                        * Esto sirve para repetir hasta 100 veces el icono "= y despues de cumplir esas
+                                        * 1000 al acabar el for pasara a la linea siguiente"
+                                        */
             System.out.print("=");
         }
         System.out.println("");
         for (int i = 0; i < liburuak.length; i++) {
-            if (liburuak[i] != null) {
+            /**
+             * esto sirve para que solo se printeen la misma cantidad de filas que libros
+             * haya
+             */
+            if (liburuak[i] != null) {/**
+                                       * dentro del for para que solo nos inprima los huecos donde haya libros ponemos
+                                       * la condicion de solo poner los huecos de array que no sean nulls
+                                       */
                 System.out.printf("%-3d %-30s %-20s %4d %4d %-11s %1s %-6.2f %-15s\n", (i + 1),
                         liburuak[i].getIzenburua(), liburuak[i].getEgilea(), liburuak[i].getOrriKopurua(),
                         liburuak[i].getUrtea(), liburuak[i].getGaia(), liburuak[i].getHizkuntza(),
@@ -92,11 +102,34 @@ public class ProgramaNagusia {
     }
 
     public static void liburuenPrezioaIrudikatu() {
-        // METODO HAU OSATU BEHAR DUZU
+        for (int i = 0; i < liburuak.length; i++) {/*
+                                                    * Si pusieramos en vez de"<" pusieramos"<="entonces intentaria
+                                                    * ejecutar un espazio mas alla de cuando finalizara el array
+                                                    * sin el "=" sin embargo la cosa cambia ya que antes de contar el
+                                                    * siguiente array analizaria si esta esta vacio o no
+                                                    */
+            if (liburuak[i] != null) {
+                System.out.println(liburuak[i].getIzenburua() + "=" + liburuak[i].getPrezioaIzartxotan(null));
+            }
+            // METODO HAU OSATU BEHAR DUZU
+        }
     }
 
     public static void zaharrenaBilatu() {
-        // METODO HAU OSATU BEHAR DUZU
+        int max = liburuak[0].getUrtea();
+        int liburua = 0;
+        for (int i = 0; i < liburuak.length; i++) {/*
+                                                    * Se utiliza el que sea menor para que no llegue a ser igual que 10
+                                                    * ya que en realidad no son 10 huecos
+                                                    */
+            if (liburuak[i] != null) {
+                if (liburuak[i].getUrtea() < max) {
+                    max = liburuak[i].getUrtea();
+                    liburua = i;
+                    // METODO HAU OSATU BEHAR DUZU
+                }
+            }
+        }
+        System.out.println("Liburu  zaharrena " + max + "argiratu zen,izena:" + liburua);
     }
-
 }
