@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Liburua {
 
     /**
@@ -91,25 +89,28 @@ public class Liburua {
     /**
      * Parametro bezala pasatu diguten gaia "FIKZIOA" bada (bai maiuskulaz edo
      * minuskulaz, edozein case-etan), "Fikzioa" balioa emango diogu atributoari. Pasatu diguten
-     * gaia "HISTORIKOA" bada (edozein case-tan), "Historikoa" balioa emango diogu
+     * gaia "HISTORIKOA" bada (edozein case-tan), "Fikzioa" balioa emango diogu
      * atributoari. Beste kasuetan, "Bestelakoa" balioa emango diogu.
      */
     public void setGaia(String gaia) {
-        //METODO HAU OSATU BEHAR DUZU
-        
-            switch(gaia.toLowerCase()){
+        gaia.toLowerCase();
+        switch (gaia){
+            case "FIKZIOA":
             case "fikzioa":
-                this.gaia = "Fikzioa";
-                break;
+            this.gaia="Fikzioa";
+            break;
+            case "HISTORIKOA":
             case "historikoa":
-                this.gaia = "Historikoa";
-                break;
+            this.gaia="Historikoa";
+            break;
             default:
-                this.gaia = "Bestelakoa";
-                break;
+            this.gaia="Bestelakoa";
+            break;
+            
         }
+        //METODO HAU OSATU BEHAR DUZU
     }
-    
+
     public char getHizkuntza() {
         return hizkuntza;
     }
@@ -123,40 +124,25 @@ public class Liburua {
      *
      */
     public void setHizkuntza(char hizkuntza) {
-        //METODO HAU OSATU BEHAR DUZU
-        switch(hizkuntza){
-            case 'e':
-                this.hizkuntza = 'E';
-                break;
-            case 'E':
-                this.hizkuntza = 'E';
-                break;
-            case 'g':
-                this.hizkuntza = 'G';
-                break;
-            case 'G':
-                this.hizkuntza = 'G';
-                break;
-            case 'i':
-                this.hizkuntza = 'I';
-                break;
-            case 'I':
-                this.hizkuntza = 'I';
-                break;
-            default:
-                this.hizkuntza = '-';
-                break;
-        }
-        if(hizkuntza == 'e' || hizkuntza == 'E'){
-            hizkuntza = 'E';
-        } else if(hizkuntza == 'g' || hizkuntza == 'G'){
-            hizkuntza = 'G';
-        } else if(hizkuntza == 'i' || hizkuntza == 'I'){
-            hizkuntza = 'I';
-        } else{
-            hizkuntza = '-';
-        }
         
+        switch(hizkuntza){
+            case 'E':
+            case 'e':
+            this.hizkuntza='E';
+            break;
+            case 'g':
+            case 'G':
+            this.hizkuntza='G';
+            break;
+            case 'i':
+            case 'I':
+            this.hizkuntza='I';
+            break;
+            default:
+            this.hizkuntza='-';
+            break;
+        }
+        //METODO HAU OSATU BEHAR DUZU
     }
 
     public double getPrezioa() {
@@ -168,16 +154,16 @@ public class Liburua {
      * honek. Izartxo bat euroko eta zentimo solteak kontutan izan gabe.
      */
     public String getPrezioaIzartxotan() {
-        //METODO HAU ALDATU BEHAR DUZU
-        int i = 0;
-        String izarrak = "";
+        String izarra="";
+        int i=0;
         while(i<=this.getPrezioa()){
             i++;
         }
-        for(;i>1; i--){
-            izarrak += "*";
+        for(;i>1;i--){
+            izarra +="*";
         }
-        return izarrak;
+        //METODO HAU ALDATU BEHAR DUZU
+        return izarra;
     }
     public void setPrezioa(double prezioa) {
         this.prezioa = prezioa;
@@ -190,12 +176,14 @@ public class Liburua {
      * "FLiuElbosq", "FTolkienTheHob", "FTolkienTheLor", "BElorriagaMatxin",...
      */
     public String getKodea() {
-        //METODO HAU ALDATU BEHAR DUZU
         if(this.getIzenburua().length()<5){
-            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua();
-        } else{
-            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua().substring(0,5);
-        }        
+            return this.getGaia().charAt(0)+this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length())+this.getIzenburua();
+        }
+        else{
+            return this.getGaia().charAt(0)+this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length())+this.getIzenburua().substring(0,5);
+        }
+           //METODO HAU ALDATU BEHAR DUZU
+     
     }
 
     /**
@@ -217,18 +205,6 @@ public class Liburua {
         return liburuak;
     }
 
-    public static ArrayList<Liburua> getLiburuenArrayLista(){
-        ArrayList<Liburua> liburuak = new ArrayList<Liburua>();
-        liburuak.add(new Liburua("El bosque oscuro", "Cixin Liu", 408, 2008, "FIKZIOA", 'g', 12.95));
-        liburuak.add(new Liburua("The Hobbit", "J.R.R. Tolkien", 413, 1937, "fikzioa", 'i', 20.95));
-        liburuak.add(new Liburua("The Lord of the Rings", "J.R.R. Tolkien", 122, 1954, "FIkziOA", 'I', 15.95));
-        liburuak.add(new Liburua("Matxinsaltoen belarriak", "Unai Elorriaga", 122, 2006, "?", 'E', 10.95));
-        liburuak.add(new Liburua("Las brujas", "Roald Dahl", 222, 1983, "Fikzioa", 'G', 10.95));
-        liburuak.add(new Liburua("Boy", "Roald Dahl", 122, 1984, "HISTORIKOA", 'I', 5.95));
-        liburuak.add(new Liburua("Obabakoak", "Bernardo Atxaga", 392, 1988, "FIKZIOA", 'E', 22.50));
-        return liburuak;
-    }
-
     /**
      * Liburua klaseko objektu bat String motako formatu honetan bueltatzen du:
      * izenburua (egilea)
@@ -236,6 +212,9 @@ public class Liburua {
     @Override
     public String toString() {
          //METODO HAU ALDATU BEHAR DUZU
-        return this.izenburua + " (" + this.egilea + ")";
+        return izenburua+"("+egilea+")";
     }
+
+
+
 }
