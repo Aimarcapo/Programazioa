@@ -11,10 +11,11 @@ private int[] year=IntStream.range(1900, 9999).toArray();;
 
 
 
-public Data(int[] year,int []month,int[] day){
-this.year=year;
-this.month=month;
-this.day=day;
+
+public Data(int[] i,int[] j,int[] k){
+this.year=i;
+this.month=j;
+this.day=k;
 
 }
 public int[] getDay(){
@@ -26,8 +27,8 @@ public int[] getMonth(){
 public int[] getYear(){
     return this.year;
 }
-public void setDay(int[] i){
-    this.day=i;
+public void setDay(int[] day){
+    this.day=day;
 }
 public void setMonth(int[] month){
     this.month=month;
@@ -39,5 +40,11 @@ public String toString(){
     return day +"/"+month+"/"+year;
 }
 public void setDay(int i) {
+}
+public void setDate(int[] day,int[] month, int[] year){
+    this.day=day;
+    this.month=month;
+    this.year=year;
+
 }
 }
