@@ -194,7 +194,7 @@ public class Liburua {
         if(this.getIzenburua().length()<5){
             return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua();
         } else{
-            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + this.getIzenburua().substring(0,5);
+            return this.getGaia().charAt(0) + this.getEgilea().substring(this.getEgilea().indexOf(" ")+1, this.getEgilea().length()) + (this.getIzenburua().substring(0,6).replaceAll(" ", ""));
         }        
     }
 

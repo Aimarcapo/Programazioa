@@ -29,30 +29,29 @@ public class Account {
     }
 
     public int credit(int amount) {
-        return this.balance + amount;
+        return this.balance=this.balance + amount;
     }
 
     public int debit(int amount) {
         if (amount <= balance) {
-            balance = balance - amount;
+            this.balance = balance - amount;
         } else {
             System.out.println("amount exceeded");
         }
         return balance;
     }
-        
-        
-        public int transferTo(Account another,int amount){
-            if(amount<=balance){
-another.balance=amount+balance;
-            }
-            else{
-                System.out.println("amount excedded");
-            }
-            return balance;
+
+    public int transferTo(Account another, int amount) {
+        if (amount <= balance) {
+            another.balance = amount + another.balance;
+            this.balance=balance-amount;
+        } else {
+            System.out.println("amount excedded");
         }
-        public String toString(){
-return "Account ["+id+","+name+","+balance+"]";
-        }
+        return balance;
     }
 
+    public String toString() {
+        return "Account [" + id + "," + name + "," + balance + "]";
+    }
+}

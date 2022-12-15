@@ -16,7 +16,7 @@ public class Prog5a {
                 System.out.println(zenbakiak[zenbatgarren]);
                 egina = true;
             } catch (InputMismatchException ex) {
-                System.out.println("Zenbaki bat sartu behar duzu.");
+                System.out.println("Zenbaki bat sartu behar duzu. " + ex.getClass());
                 sc.next(); //scannerrean geratu dan elementua hustuteko
             } catch (ArrayIndexOutOfBoundsException ex) {
                 System.out.println("Zenbaki okerra sartu duzu.");

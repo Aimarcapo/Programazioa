@@ -7,6 +7,7 @@ public class Prog6a {
         } catch (Exception ex) {
             System.out.println("Salbuespena gertatu da.");
             System.out.println(ex.getMessage());
+            System.out.println(ex.getClass());
         }
         
     }

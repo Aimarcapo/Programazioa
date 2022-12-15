@@ -27,7 +27,7 @@ public class ProgramaNagusia {
             aukera = sc.nextInt();
             System.out.println("");
             switch (aukera) {
-               
+
                 case 1:
                     liburuakIkusi();
                     break;
@@ -117,7 +117,9 @@ public class ProgramaNagusia {
     }
 
     public static void zaharrenaBilatu() {
-        int max = liburuak[0].getUrtea();/* Se declarra el max con el array para que coja el valor del array y que en el */
+        int max = liburuak[0].getUrtea();/*
+                                          * Se declarra el max con el array para que coja el valor del array y que en el
+                                          */
         int liburua = 0;
         for (int i = 0; i < liburuak.length; i++) {/*
                                                     * Se utiliza el que sea menor para que no llegue a ser igual que 10
@@ -133,5 +135,5 @@ public class ProgramaNagusia {
         }
         System.out.println("Liburu  zaharrena " + max + "argiratu zen,izena:" + liburuak[liburua]);
     }
-    
+
 }

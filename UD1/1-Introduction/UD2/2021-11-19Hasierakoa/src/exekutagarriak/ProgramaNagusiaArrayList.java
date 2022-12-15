@@ -14,7 +14,8 @@ public class ProgramaNagusiaArrayList {
         Scanner in = new Scanner(System.in);
         liburuak = Liburua.getLiburuenArrayLista();
 
-        int aukera = 0;
+        int aukera=0;
+      
         do {
             System.out.println();
             System.out.println("LIBURUTEGIA");
@@ -32,10 +33,12 @@ public class ProgramaNagusiaArrayList {
             System.out.println("");
             switch (aukera) {
                 case -1:
-                liburuaGehitu(null);
+                liburuaGehitu();
                 break;
                 case 0:
-                liburuaKendu(null, aukera);
+                System.out.println("Zein posiziokoa kendu nahi duzu");
+                int posizioa=in.nextInt();
+                liburuaKendu( posizioa);
                 break;
                 case 1:
                     liburuakIkusi();
@@ -70,7 +73,7 @@ public class ProgramaNagusiaArrayList {
         }
     }
 
-    public static void liburuenDatuGuztiakIkusi() {
+    public static void liburuenDatuGuztiakIkusi() {/* */
         //METODO HAU OSATU BEHAR DUZU
         // ...
         double batazbestekoa = 0;
@@ -79,7 +82,7 @@ public class ProgramaNagusiaArrayList {
         for (int i = 0; i < 100; i++) {
             System.out.print("=");
         }
-        System.out.println("");
+        System.out.println();
         for (int i = 0; i < liburuak.size(); i++) {
             System.out.printf("%-3d %-30s %-20s %4d %4d %-11s %1s %-6.2f %-15s\n", (i+1), liburuak.get(i).getIzenburua(), liburuak.get(i).getEgilea(), liburuak.get(i).getOrriKopurua(), liburuak.get(i).getUrtea(), liburuak.get(i).getGaia(), liburuak.get(i).getHizkuntza(), liburuak.get(i).getPrezioa(), liburuak.get(i).getKodea());
             x++;
@@ -114,28 +117,28 @@ public class ProgramaNagusiaArrayList {
         System.out.println("Liburu zaharrena " + zaharrena + " urtean argitaratu zen: " + liburuak.get(liburua));
     }
 
-    public static void liburuaGehitu(ArrayList<Liburua> liburuak){
+    public static void liburuaGehitu(){
         /*Ez du lagatzen nextln()-a egitea, justo goia scanner-a sortzen ez bada. scanner-a ixten baduzu, gero, aukera
          * berri bat aukeratzean (menukoa), errorea ematen du*/
         Scanner in = new Scanner(System.in);
         liburuak.add(new Liburua("X", "X", 1, 1, "X", 'X', 1));
         System.out.print("Sartu izenburua: ");
-        liburuak.get(liburuak.size()-1).setIzenburua(in.nextLine());
-        System.out.print("Sartu egilea: ");
-        liburuak.get(liburuak.size()-1).setEgilea(in.nextLine());
+        liburuak.get(liburuak.size()-1).setIzenburua(in.next());
+        System.out.print("Sartu Egilea: ");
+        liburuak.get(liburuak.size()-1).setEgilea(in.next());
         System.out.print("Sartu orri kopurua: ");
         liburuak.get(liburuak.size()-1).setOrriKopurua(in.nextInt());
         System.out.print("Sartu urtea: ");
         liburuak.get(liburuak.size()-1).setUrtea(in.nextInt());
-        System.out.print("Sartu gaia: ");
+        System.out.print("Sartu Gaia: ");
         liburuak.get(liburuak.size()-1).setGaia(in.next());
-        System.out.print("Sartu hizkuntza: ");
+        System.out.print("Sartu Hizkuntza: ");
         liburuak.get(liburuak.size()-1).setHizkuntza(in.next().charAt(0));
-        System.out.print("Sartu prezioa: ");
+        System.out.print("Sartu Prezioa: ");
         liburuak.get(liburuak.size()-1).setPrezioa(in.nextDouble());
     }
 
-    public static void liburuaKendu(ArrayList<Liburua> liburuak, int posizioa){
+    public static void liburuaKendu( int posizioa){
         liburuak.remove(posizioa-1);
         System.out.println("Listo, kenduta!");
     }
