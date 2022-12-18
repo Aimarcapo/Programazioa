@@ -1,0 +1,11 @@
+{
+    "java.project.sourcePaths": [
+        "src",
+        "2022-11-04AimarAlonso/src",
+        "2021-11-19Hasierakoa/src/exekutagarriak"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar"
+    ]
+}
