@@ -116,17 +116,17 @@ public class Zatikia {
         return emaitza;
     }
 
-    /** OSATU EZAZU METODO HAU:
-     * Zenbakitzailea eta izendatzaileak daukaten zeinuaren arabera metodo 
+    /**
+     * OSATU EZAZU METODO HAU:
+     * Zenbakitzailea eta izendatzaileak daukaten zeinuaren arabera metodo
      * honek true edo false itzuliko du.
      * 
      */
     public boolean isPositive() {
-        if(this.hamartarBaliokidea()>=0){
-        return true;
+        if (this.hamartarBaliokidea() >= 0) {
+            return true;
+        } else {
+            return false;
         }
-        else {
-        return false;
     }
-     }
-    }
+}
