@@ -1,115 +1,175 @@
 public class Laukia {
-   private int altuera;
+    
+   //ALDAGAI PRIBATUAK SORTU
    private int zabalera;
-   int maxPerimetroa = Integer.MIN_VALUE;
+   private int altuera;
 
-   public Laukia() { // 1st Constructor (default constructor)
-      altuera = 5;
-      zabalera = 5;
+   //KONSTRUKTOREAK
+   /**Ezer ere ez bada sartzen, default baloreak hartuko du. */
+   public Laukia(){
+       zabalera = 5;
+       altuera = 5;
    }
 
-   public Laukia(int a, int z) { // 1st Constructor (default constructor)
-      altuera = a;
-      zabalera = z;
+   /**Altuera eta zabalera eskuz sartzeko konstruktorea. */
+   public Laukia(int zab, int alt){
+       zabalera = zab;
+       altuera = alt;
    }
 
-   public int getZabalera() { // getter for radius
-      return zabalera;
+   //METODO PUBLIKOAK
+
+   //GETTER METODOAK ALDAGAI PRIBATUAK ERAKUSTEKO
+   /**Metodo honek karratuaren zabalera erakutsiko du. */
+   public int getZabalera(){
+       return zabalera;
+   }
+   /**Metodo honek karratuaren altuera erakutsiko du. */
+   public int getAltuera(){
+       return altuera;
+   }
+   /**Metodo honek karratuaren azalera erakutsiko du. */
+   public int getAzalera(){
+       return zabalera*altuera;
+   }
+   /**Metodo honek karratuaren perimetroa erakutsiko du. */
+   public int getPerimetroa(){
+       return altuera*2 + zabalera*2;
+   }
+   /**Metodo honek karratu mota erakutsiko du. */
+   public String getMota(){
+       if(altuera == zabalera){
+           return "karratua";
+       } else if(altuera > zabalera){
+           return "bertikala";
+       } else {
+           return "horizontala";
+       }
    }
 
-   /** Returns the color */
-   public int getAltuera() { // getter for color
-      return altuera;
+   //SETTER METODOAK ALDAGAI PRIBATUAK ALDATZEKO
+   /**Metodo honek karratuaren zabalera aldatzea ahalbidetzen du. */
+   public void setZabalera(int zabaleraBerria){
+       zabalera = zabaleraBerria;
+   }
+   /**Metodo honek karratuaren altuera aldatzea ahalbidetzen du. */
+   public void setAltuera(int altueraBerria){
+       altuera = altueraBerria;
    }
 
-   public int getAzalera() {
-      return altuera * zabalera;
+   //TOSTRING METODOA
+   /** Atributu guztiak String bezala idazteko, eta gure objektua String bezala tratatu ahal izateko.*/
+   public String toString(){
+       return "Laukia[" + zabalera + "x" + altuera + "]";
    }
 
-   public int getPerimetroa() {
-      return (altuera * 2) + (zabalera * 2);
+   //MARRAZTEKO
+   /**Metodo honek laukia beteta marrazten du. */
+   public void marraztuHutsik(){
+       
+       for(int y = 1; y <= this.getAltuera(); y++){
+           if(y==1 || y==this.getAltuera()){
+               for(int x = 1; x <= this.getZabalera(); x++){
+                   System.out.print("* ");
+               }
+           } else {
+               for (int x = 1; x <= this.getZabalera(); x++) {
+                   if(x==1 || x==this.getZabalera()){
+                       System.out.print("* ");
+                   } else {
+                       System.out.print("  ");
+                   }
+               }
+           }
+           
+           System.out.println("");
+       }
    }
 
-   public int getmaxPerimetroa() {
-      return (altuera * 2) + (zabalera * 2);
+   /**Metodo honek laukia hutsik marrazten du. */
+   public void marraztuBeteta(){
+       
+       for(int y = 0; y < this.getAltuera(); y++){
+           for (int x = 0; x < this.getZabalera(); x++) {
+               System.out.print("* ");
+           }
+           System.out.println("");
+       }
    }
 
-   public void setZabalera(int zabaleraBerria) {
-      zabalera = zabaleraBerria;
+   /**Karaktere berezi batekin laukia marrazteko */
+   public void marraztuBeteta(char ikurra){
+       for(int y = 0; y < this.getAltuera(); y++){
+           for (int x = 0; x < this.getZabalera(); x++) {
+               System.out.print(ikurra + " ");
+           }
+           System.out.println("");
+       }
    }
 
-   public void setAltuera(int altueraBerria) {
-      altuera = altueraBerria;
+   /**Karaktere berezi batekin lauki marraztuaren String-a bueltatzeko */
+   public String laukiBetea(){
+       String emaitza = "";
+
+       for(int y = 0; y < this.getAltuera(); y++){
+           for (int x = 0; x < this.getZabalera(); x++) {
+               emaitza += "* ";
+           }
+           emaitza += "\n";
+       }        
+
+       return emaitza;
    }
 
-   public String toString() {
-      return "Laukia[altuera=" + altuera + ",zabalera=" + zabalera + "]";
+   
+
+   //HANDIENA TOPATZEKO METODOAK
+   /**2 lauki konparatzeko metodoa */
+   public  boolean isBiggerThan(Laukia l) {
+
+       boolean handiago = false;
+
+       if (this.getAzalera() > l.getAzalera()) {
+           handiago = true;
+       }
+
+       return handiago;
+
    }
 
-   public String getMota() {
-      String emaitza = "";
-      if (altuera == zabalera) {
-         emaitza = "Karratua";
-      } else if (altuera > zabalera) {
-         emaitza = "Bertikala";
-      } else if (zabalera > altuera) {
-         emaitza = "Horizontala";
-      }
-      return emaitza;
+   public static Laukia getTheBiggest(Laukia[] lk) {
+       
+       Laukia max = lk[0];
+
+       for (int i = 1; i < lk.length && lk[i] != null; i++) {
+           if (lk[i].isBiggerThan(max)) {
+               max = lk[i];
+           }
+       }
+
+       return max;
    }
 
-   public void marraztuBeteta() {
-      for (int i = 1; i <= altuera; i++) {
-         for (int z = 1; z <= zabalera; z++) {
-            System.out.print("* ");
-         }
+   //ARIKETA GEHIGARRIAK
 
-         System.out.println("");
-      }
+   /**Lauki array bat txikienetik handieneta ordenatzeko BubleSort ariketan oinarrituta */
+   public static void ordenatu(Laukia[] laukiak){
+       
+       for (int a = 0; a < laukiak.length; a++) {
+           for (int i = 0; i < laukiak.length-1; i++) {
+               if(laukiak[i].getAzalera() > laukiak[i+1].getAzalera()){
+                   Laukia kopia = laukiak[i];
+                   laukiak[i]=laukiak[i+1];
+                   laukiak[i+1]=kopia; 
+               }
+           }
+       }
    }
 
-   public void marraztuHutsik() {
-      for (int i = 1; i <= altuera; i++) {
-         for (int z = 1; z <= zabalera; z++) {
-
-            if (i == 1 || i == altuera ||
-                  z == 1 || z == zabalera) {
-               System.out.print("*");
-            } else {
-               System.out.print(" ");
-            }
-         }
-         System.out.println("");
-
-      }
+   /**Lauki bat proportzionalki handitzeko */
+   public static void handitu(Laukia l, int tamaina){
+       l.setAltuera(l.getAltuera()*tamaina);
+       l.setZabalera(l.getZabalera()*tamaina);
    }
 
-   public void marraztuBeteta(char ikurra) {
-      for (int i = 1; i <= altuera; i++) {
-         for (int z = 1; z <= zabalera; z++) {
-            System.out.print(ikurra);
-         }
-
-         System.out.println("");
-      }
-   }
-
-   public boolean isBiggerThan(Laukia x){
-      boolean bigger=false;
-      if(this.getAzalera()>x.getAzalera()){
-
-         bigger=true;
-   }
-   return bigger;
-}
-
-   public static Laukia getTheBiggest(Laukia[] laukiak) {
-      Laukia max = laukiak[0];
-      for (int i = 1; i < laukiak.length && laukiak[i] != null; i++) {
-         if (laukiak[i].isBiggerThan(max)) {
-            max = laukiak[i];
-         }
-      }
-      return max;
-   }
 }

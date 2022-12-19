@@ -78,12 +78,13 @@ public class Menua {
                 "Mota");
         System.out.println("==============================================================================\n");
         for (int i = 0, x = 1; i < laukiak.length; i++, x++) {
+            if(laukiak[i]!=null){
             System.out.printf("%5d %12d %10d %10d %10d %18s\n", x, laukiak[i].getZabalera(), laukiak[i].getAltuera(),
                     laukiak[i].getAzalera(), laukiak[i].getPerimetroa(), laukiak[i].getMota());
         }
         
     }
-
+    }
     public static void marraztu() {
         int z;
         String beteta;
@@ -107,5 +108,3 @@ public class Menua {
         System.out.println("Laukirik handiena hau da:" + bigger.toString());
     }
 }
-
-
