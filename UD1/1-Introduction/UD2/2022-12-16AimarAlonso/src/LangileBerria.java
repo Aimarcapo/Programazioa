@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.Langilea;
-
 
 /** Programa honek langile berri bat txertatuko du zerrendan. Hauek dira programak jarraituko dituen pausuak:
  * 1.- Langileen zerrenda eskuratu (metodo egokiari deituta)

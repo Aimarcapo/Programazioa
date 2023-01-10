@@ -14,7 +14,7 @@ public class NeuLangile {
         System.out.println("Nire langile datuak igoera aurretik");
         System.out.println(langilea.get(1));
         System.out.println("Nire langile datuak igoeraren ostean");
-      System.out.println(langilea.get(1).soldataIgo(50)); ;
+      System.out.println(langilea.get(1).soldataIgo(50)); 
        
         
         
