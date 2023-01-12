@@ -1,5 +1,7 @@
 package MyPointEtab;
 
+import java.util.Arrays;
+
 public class TestMyPoint {
     public static void main(String[] args) {
 
@@ -14,5 +16,27 @@ public class TestMyPoint {
         System.out.println(" p0 => " + p0.distance());
         System.out.println(" p1 => " + p1.distance());
         System.out.println(" p2 => " + p2.distance(p3));
+        MyPoint puntuenarraya[] = new MyPoint[10];
+        for (int i = 0; i < 10; i++) {
+            MyPoint puntu = new MyPoint(i + 1, i + 1);
+            puntuenarraya[i] = puntu;
+        }
+        System.out.println("puntuen arraya =>" + Arrays.toString(puntuenarraya));
+
+        MyPoint puntuenarrayaa[] = new MyPoint[100];
+        for (int i = 0; i < 100; i++) {
+            MyPoint puntu = new MyPoint(i , i );
+            puntuenarrayaa[i] = puntu;
+            
+        }
+        System.out.println("puntuen arraya =>" + Arrays.toString(puntuenarrayaa));
+        MyPoint ausazko[] = new MyPoint[5];
+        for (int i = 0; i < 5; i++) {
+            MyPoint puntua = new MyPoint((int) (Math.random() * 10), (int) (Math.random() * 10));
+            ausazko[i] = puntua;
+            
+        }
+        System.out.println("puntuen arraya =>" + Arrays.toString(ausazko));
+        System.out.println();
     }
 }
