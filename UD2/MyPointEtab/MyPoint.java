@@ -21,8 +21,9 @@ public class MyPoint {
         return this.y;
     }
 
-    public int getXY() {
-        return this.x + this.y;
+    public int[] getXY() {
+        int[]XY={x, y};
+        return XY;
 
     }
 

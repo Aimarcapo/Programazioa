@@ -38,5 +38,6 @@ public class TestMyPoint {
         }
         System.out.println("puntuen arraya =>" + Arrays.toString(ausazko));
         System.out.println();
+        System.out.println("puntuen arraya =>" + Arrays.toString(p1.getXY()));
     }
 }
