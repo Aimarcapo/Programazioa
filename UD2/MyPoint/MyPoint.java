@@ -1,5 +1,5 @@
 
-
+package MyPoint;
 
 public class MyPoint {
     private int x;

@@ -1,5 +1,5 @@
 
-
+package MyPoint;
 import java.util.Arrays;
 
 public class TestMyPoint {

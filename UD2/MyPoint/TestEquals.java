@@ -1,4 +1,4 @@
-
+package MyPoint;
 public class TestEquals {
     public static void main(String[] args) {
     MyPoint p1 =new MyPoint(5,6);
