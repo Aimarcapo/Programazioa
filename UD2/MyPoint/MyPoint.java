@@ -24,7 +24,6 @@ public class MyPoint {
     public int[] getXY() {
         int[]XY={x, y};
         return XY;
-
     }
 
     public void setX(int x) {
