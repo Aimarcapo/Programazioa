@@ -49,4 +49,10 @@ public class MyRectangle {
         return (topLeft.getY() - bottomRight.getY()) + (topLeft.getY() - bottomRight.getY())
                 + (bottomRight.getX() - topLeft.getX()) + (bottomRight.getX() - topLeft.getX());
     }
+    public MyPoint getTopLeft(){
+        return this.topLeft;
+    }
+    public void setTopLeft(MyPoint p){
+        this.topLeft=p;
+    }
 }
