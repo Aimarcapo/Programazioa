@@ -13,12 +13,14 @@ public class MyPoint {
         this.y = y;
     }
 
+    
+
     public int getX() {
-        return this.x;
+        return x;
     }
 
     public int getY() {
-        return this.y;
+        return y;
     }
 
     public int[] getXY() {
@@ -61,8 +63,11 @@ public class MyPoint {
         return distancia;
     }
 
+   
+
+    @Override
     public String toString() {
-        return "(" + this.x + "," + this.y + ")";
+        return "[" + x + "," + y + "]";
     }
 
     @Override
