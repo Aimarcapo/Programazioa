@@ -10,7 +10,7 @@ public class GeometriaAzterketa {
 
     System.out.println("GEOMETRIA AZTERKETA");
     if (galdera1()) {
-      nota++;
+      nota++;x
     }
     if (galdera2()) {
       nota++;
@@ -24,12 +24,16 @@ public class GeometriaAzterketa {
   public static boolean galdera1() {
     MyPoint p1 = new MyPoint(1, 5);
     MyPoint p2 = new MyPoint(7, 3);
+
     double emaitza;
     double erantzun;
+
     boolean bai = false;
     System.out.println("Zein da P1" + p1 + "eta P2" + p2 + "artean dagoen distantzia");
+
     emaitza = p1.distance(p2);
     erantzun = sc.nextDouble();
+
     if ((int) emaitza == (int) erantzun) {
       bai = true;
       System.out.println("Erantzun zuzena");
@@ -37,12 +41,16 @@ public class GeometriaAzterketa {
       System.out.println("Erantzun okerra");
     }
     return bai;
+
   }
 
   public static boolean galdera2() {
-    MyCircle zirkulu1 = new MyCircle(4, 2, 15);
+    MyPoint point = new MyPoint(3,4);
+    MyCircle zirkulu1 = new MyCircle(point.getX(), point.getY(), 15);
+
     double erantzun;
     double emaitza;
+    
     boolean bai = false;
     System.out.println("Kalkulatu zirukulu1" + zirkulu1 + "-en azalera");
     emaitza = zirkulu1.getArea();
@@ -68,8 +76,7 @@ public class GeometriaAzterketa {
     if (zirkulu1.isInside(puntua)) {
       erantzuna = true;
       System.out.println("Idatzi duzun puntua zirkuluaren barruan dago");
-    }
-    else{
+    } else {
       System.out.println("Idatzi duzun puntua ez dago zirukularen barruan");
     }
     return erantzuna;
