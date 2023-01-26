@@ -1,3 +1,3 @@
 public enum Demarkazioa {
-     DEL,MED,DEF,PORT;
+    Aurrelaria,ZelaiErdiko, Defentsa, Atezaina;
 }

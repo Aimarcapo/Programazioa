@@ -1,18 +1,17 @@
-public class Futbolista extends IntegrateSeleccion {
+
+ public class Futbolista extends IntegranteSeleccion {
     private int dorsal;
-    private Demarkazioa demarkazion;
-    
-    
-    
-    public Futbolista(int id, String nombre, int dorsal, Demarkazioa demarkazion) {
+    private Demarkazioa demarkazioa;
+
+    public Futbolista(int id, String nombre, int dorsal, Demarkazioa demarkazioa) {
         super(id, nombre);
         this.dorsal = dorsal;
-        this.demarkazion = demarkazion;
+        this.demarkazioa = demarkazioa;
     }
-    public Futbolista(int id, String nombre, String apellido, int edad, int dorsal, Demarkazioa demarkazion) {
-        super(id, nombre, apellido, edad);
+    public Futbolista(int id, String nombre, String apellidos, int edad, int dorsal, Demarkazioa demarkazioa) {
+        super(id, nombre, apellidos, edad);
         this.dorsal = dorsal;
-        this.demarkazion = demarkazion;
+        this.demarkazioa = demarkazioa;
     }
     public int getDorsal() {
         return dorsal;
@@ -20,23 +19,23 @@ public class Futbolista extends IntegrateSeleccion {
     public void setDorsal(int dorsal) {
         this.dorsal = dorsal;
     }
-    public Demarkazioa getDemarkazion() {
-        return demarkazion;
+    public Demarkazioa getDemarkazioa() {
+        return demarkazioa;
     }
-    public void setDemarkazion(Demarkazioa demarkazion) {
-        this.demarkazion = demarkazion;
+    public void setDemarkazioa(Demarkazioa demarkazioa) {
+        this.demarkazioa = demarkazioa;
     }
-    @Override
-    public String toString() {
-        return super.toString()+"->Futbolista [dorsal=" + dorsal + ", demarkazion=" + demarkazion + "]";
-    }
+    
     public String entrenar(){
-        String mensaje="Entrenatzen";
+        String mensaje = "Estoy entrenando";
         return mensaje;
     }
     public String jugarPartido(){
-        String mensaje="Partida jokatzen";
+        String mensaje="Jokatzen";
         return mensaje;
+    }
+    public String toString(){
+        return"Futbolista{id="+getId()+", nombre="+getNombre()+", apellidos="+getApellidos()+", edad="+getEdad()+", dorsal="+getDorsal()+", demarcacion="+getDemarkazioa()+"}";
     }
     
 }

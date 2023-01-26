@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-public class Partida {
+public class Partida  {
     private LocalDate data;
     private String aurkaria;
     private ArrayList <Futbolista> txartelak;
@@ -28,6 +28,6 @@ public class Partida {
         this.txartelak = txartelak;
     }
     public void txartelaJarri(Futbolista f){
-        txartelak.add(f);
+        this.txartelak.add(f);
     }
 }
