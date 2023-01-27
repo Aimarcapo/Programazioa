@@ -30,7 +30,7 @@ public class EuskalSelekzioa {
         Entrenador entrenador = new Entrenador(azkenId, "Javier", "Clemente", 70, "Federación Vasca");
 
         azkenId++;
-        Masajista masajista1 = new Masajista(azkenId, "Iñaki", "Sertxiberrieta", 23, "Fsioterapeuta", 9);
+        Masajista masajista1 = new Masajista(azkenId, "Iñaki", "Sertxiberrieta", 23, "Fisioterapeuta", 9);
 
         azkenId++;
         Futbolista futbolista = new Futbolista(azkenId, "Ander", "Etxeburu", 27, 23, Demarkazioa.Defentsa);
@@ -56,6 +56,56 @@ public class EuskalSelekzioa {
     public static void selekzioOsoaSortu() {
 
         System.out.println("******** INTEGRANTES SELECCIÓN ********");
+        selekzioa.add(new Futbolista(++azkenId,"Aitor","Fernández",29,1,Demarkazioa.POR));
+
+        selekzioa.add(new Futbolista(++azkenId,"Unai","Bustinza",28,2,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Mikel","Balenziaga",32,3,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Asier","Illarramendi",30,4,Demarkazioa.MED));
+
+        selekzioa.add(new Futbolista(++azkenId,"Iñigo","Martínez",29,5,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Mikel","San José",31,6,Demarkazioa.MED));
+
+        selekzioa.add(new Futbolista(++azkenId,"Gaizka","Larrazabal",23,7,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Manu","García",34,8,Demarkazioa.MED));
+
+        selekzioa.add(new Futbolista(++azkenId,"Aritz","Aduriz",39,9,Demarkazioa.DEL));
+
+        selekzioa.add(new Futbolista(++azkenId,"Javier","Eraso",30,10,Demarkazioa.MED));
+
+        selekzioa.add(new Futbolista(++azkenId,"Asier","Villalibre",23,11,Demarkazioa.DEL));
+
+        selekzioa.add(new Futbolista(++azkenId,"Aihen","Muñoz",23,12,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Iago","Herrerín",32,13,Demarkazioa.POR));
+
+        selekzioa.add(new Futbolista(++azkenId,"Aritz","Elustondo",26,14,Demarkazioa.MED));
+
+        selekzioa.add(new Futbolista(++azkenId,"Jesús","Areso",21,15,Demarkazioa.DEF));
+
+        selekzioa.add(new Futbolista(++azkenId,"Iñigo","Vicente",23,16,Demarkazioa.DEL));
+
+        selekzioa.add(new Futbolista(++azkenId,"Daniel","Vivian",21,17,Demarkazioa.MED));
+
+    
+
+        selekzioa.add(new Entrenador(++azkenId,"Javier","Clemente",0,"F1"));
+
+        selekzioa.add(new Entrenador(++azkenId,"Joseba","Núñez",0,"F2"));
+
+        selekzioa.add(new Entrenador(++azkenId,"Markel","Lautadahandi",0,"F3"));
+
+        
+
+        selekzioa.add(new Masajista(++azkenId,"Iñaki","Sertxiberrieta",0,"Fisioterapeuta",0));
+
+        
+
+        selekzioa.add(new IntegranteSeleccion(++azkenId,"Ander","Etxeburu",0));
+
         for(int i = 0; i < selekzioa.size(); i++){
             System.out.println(selekzioa.get(i).toString());
         }
