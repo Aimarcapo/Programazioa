@@ -10,7 +10,7 @@ public class GeometriaAzterketa {
 
     System.out.println("GEOMETRIA AZTERKETA");
     if (galdera1()) {
-      nota++;x
+      nota++;
     }
     if (galdera2()) {
       nota++;

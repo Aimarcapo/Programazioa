@@ -19,7 +19,7 @@ public class EuskalSelekzioa {
     // demarcacion=DEL}"
     public static void futbolariBat() {
         azkenId++;
-        Futbolista futbolista = new Futbolista(azkenId, "Asier", "Villalibre", 23, 11, Demarkazioa.Aurrelaria);
+        Futbolista futbolista = new Futbolista(azkenId, "Asier", "Villalibre", 23, 11, Demarkazioa.DEL);
         System.out.println(futbolista.toString());
         System.out.println(futbolista.entrenar());
         selekzioa.add(futbolista);
@@ -33,7 +33,7 @@ public class EuskalSelekzioa {
         Masajista masajista1 = new Masajista(azkenId, "Iñaki", "Sertxiberrieta", 23, "Fisioterapeuta", 9);
 
         azkenId++;
-        Futbolista futbolista = new Futbolista(azkenId, "Ander", "Etxeburu", 27, 23, Demarkazioa.Defentsa);
+        Futbolista futbolista = new Futbolista(azkenId, "Ander", "Etxeburu", 27, 23, Demarkazioa.DEF);
 
         System.out.println(entrenador.toString());
         System.out.println(entrenador.concentrarse());
