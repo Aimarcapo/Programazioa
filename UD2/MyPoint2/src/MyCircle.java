@@ -18,7 +18,7 @@ public MyCircle(int x,int y,int radius){
         this.radius = radius;
     }
   public double distance (MyCircle p ){
-    return this.distance(p.center);
+    return  this.distance(p.center);
     
   }
 }
