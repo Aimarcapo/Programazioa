@@ -1,15 +1,19 @@
 import java.util.ArrayList;
+import java.time.LocalDate;
 public class PartidakKudeatu {
 
     private static ArrayList<IntegranteSeleccion> selekzioa = new ArrayList();
     private static Partida[] partidak = new Partida[200];
 
-    /** Programa honek selekzioa eta hasierako partiden datuak kargatu ondoren erabiltzaileari datu
+    /**
+     * Programa honek selekzioa eta hasierako partiden datuak kargatu ondoren
+     * erabiltzaileari datu
      * gehiago dauzkan galdetuko dio.
-     * Jarraian partiden zerrenda bistaratuko da eta amaitzeko partiden inguruko estadistikak bistaratuko ditu.
+     * Jarraian partiden zerrenda bistaratuko da eta amaitzeko partiden inguruko
+     * estadistikak bistaratuko ditu.
      */
     public static void main(String[] args) {
-       
+
     }
 
     /**
@@ -52,36 +56,38 @@ public class PartidakKudeatu {
      */
     public static int hasierakoPartidakErregistratu() {
 
-      return 0;
+       partidak[1]=new Partida(1915 3, "Katalunia", 2);
+       return partidak[1];
     }
 
     /**
-     * Partida berri baten datuak erabiltzaileari eskatu eta partida objektua bueltatu.
+     * Partida berri baten datuak erabiltzaileari eskatu eta partida objektua
+     * bueltatu.
      */
     public static Partida partidaBatenDatuakEskatu() {
-       
+
         return null;
     }
 
     /** Partiden zerrenda bistaratu. */
     public static void partidakBistaratu() {
-      
+
     }
 
-/**
- *  Metodo honek hainbat estatistika kalkulatu eta kontsolatik inprimatuko ditu.
- *  Adibidez: 
- * 
- *   - Jokatutako partida kopurua
- *   - Zein izan den partidarik gogorrena txartel kopuruari dagokionez 
- *   - Txartel kopurua jokalariko
- *   - Txartel gehien lortu duen jokalariaren izena
- *   - Zenbat partida jolastu den urteko
- *   - Duela zenbat urte jolastu zen lehen partida
- *   - Partiden zein portzentai jokatu den abenduan
- *   - ...
- */
+    /**
+     * Metodo honek hainbat estatistika kalkulatu eta kontsolatik inprimatuko ditu.
+     * Adibidez:
+     * 
+     * - Jokatutako partida kopurua
+     * - Zein izan den partidarik gogorrena txartel kopuruari dagokionez
+     * - Txartel kopurua jokalariko
+     * - Txartel gehien lortu duen jokalariaren izena
+     * - Zenbat partida jolastu den urteko
+     * - Duela zenbat urte jolastu zen lehen partida
+     * - Partiden zein portzentai jokatu den abenduan
+     * - ...
+     */
     public static void estatistikak() {
     }
 
- }
+}

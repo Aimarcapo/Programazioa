@@ -30,5 +30,10 @@ public class Partida {
     public void txartelaJarri(Futbolista f){
         txartelak.add(f);
     }
+    @Override
+    public String toString() {
+        return "Partida [data=" + data + ", aurkaria=" + aurkaria + ", txartelak=" + txartelak + "]";
+    }
+    
     
 }
