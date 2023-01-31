@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class EuskalSelekzioMenua {
     public static int azkenId = 0;
@@ -37,6 +39,18 @@ public class EuskalSelekzioMenua {
                     break;
                 case 2:
                     partaideakTaldekatu();
+                    break;
+                case 3:
+                    partaideakAlfabetikokiIkusi();
+                    break;
+                case 4:
+                    aldaketa();
+                    break;
+                case 5:
+                    bilatu();
+                    break;
+                case 6:
+                    futbolariakAlfabetikokiIkusi();
                     break;
 
             }
@@ -99,23 +113,111 @@ public class EuskalSelekzioMenua {
     }
 
     public static void partaideakTaldekatu() {
+        ArrayList<IntegranteSeleccion> futbolistak = new ArrayList<>();
+        ArrayList<IntegranteSeleccion> entrenatzaileak = new ArrayList<>();
+        ArrayList<IntegranteSeleccion> masajistak = new ArrayList<>();
+        ArrayList<IntegranteSeleccion> besteak = new ArrayList<>();
 
-        EuskalSelekzioa.selekzioOsoaSortu();
-        for (int index = 0; index < EuskalSelekzioa.selekzioa.size(); index++) {
-            if (index == 0) {
-                System.out.println("");
-                System.out.println("FUTBOLARIAK\n==============");
-            } else if (index == 17) {
-                System.out.println("");
-                System.out.println("ENTRENATZAILEAK\n==============");
-            } else if (index == 20) {
-                System.out.println("");
-                System.out.println("MASAJISTAK\n==============");
-            } else if (index == 21) {
-                System.out.println("");
-                System.out.println("BESTELAKOAK\n==============");
+        for (int i = 0; i < selekzioa.size(); i++) {
+            if (selekzioa.get(i).getClass() == Futbolista.class) {
+                futbolistak.add(selekzioa.get(i));
             }
-            System.out.println(EuskalSelekzioa.selekzioa.get(index));
+            if (selekzioa.get(i).getClass() == Entrenador.class) {
+                entrenatzaileak.add(selekzioa.get(i));
+            }
+            if (selekzioa.get(i).getClass() == Masajista.class) {
+                masajistak.add(selekzioa.get(i));
+            }
+            if (selekzioa.get(i).getClass() == IntegranteSeleccion.class) {
+                besteak.add(selekzioa.get(i));
+            }
+
+        }
+
+        System.out.println("------------------------FUTBOLARIAK------------------------");
+        for (int i = 0; i < futbolistak.size(); i++) {
+            System.out.println(futbolistak.get(i));
+        }
+        System.out.println("Futbolista  kopurua: " + futbolistak.size());
+        System.out.println();
+
+        System.out.println("----------------------ENTRENATZAILEAK----------------------");
+        for (int i = 0; i < entrenatzaileak.size(); i++) {
+            System.out.println(entrenatzaileak.get(i));
+        }
+        System.out.println("Entrenatzaile kopurua: " + entrenatzaileak.size());
+        System.out.println();
+
+        System.out.println("-------------------------MASAJISTAK------------------------");
+        for (int i = 0; i < masajistak.size(); i++) {
+            System.out.println(masajistak.get(i));
+        }
+        System.out.println("Masajista kopurua: " + masajistak.size());
+        System.out.println();
+
+        System.out.println("--------------------------BESTEAK--------------------------");
+        for (int i = 0; i < besteak.size(); i++) {
+            System.out.println(besteak.get(i));
+        }
+        System.out.println("Selekzioko integrante kopurua: " + besteak.size());
+        System.out.println();
+
+    }
+
+    public static void futbolariakAlfabetikokiIkusi() {
+        ArrayList<IntegranteSeleccion> futbolistak = new ArrayList<>();
+        for (int i = 0; i < selekzioa.size(); i++) {
+            if (selekzioa.get(i).getClass() == Futbolista.class) {
+                futbolistak.add(selekzioa.get(i));
+            }
+        }
+
+        Collections.sort(futbolistak, new Comparator<IntegranteSeleccion>() {
+            @Override
+            public int compare(IntegranteSeleccion o1, IntegranteSeleccion o2) {
+                return o1.getApellidos().compareTo(o2.getApellidos());
+            }
+        });
+
+        for (int i = 0; i < futbolistak.size(); i++) {
+            System.out.println(futbolistak.get(i));
+        }
+    }
+
+    public static void aldaketa() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Nor aldatu nahi duzu pstuz (Idatzi id-a): ");
+        int id = in.nextInt();
+
+        for (int i = 0; i < selekzioa.size(); i++) {
+            if (selekzioa.get(i).getId() == id) {
+
+            }
+        }
+    }
+
+    public static void bilatu() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Zein abizen nahi duzu bilatzea? ");
+        String abizena = in.next();
+
+        for (int i = 0; i < selekzioa.size(); i++) {
+            if (selekzioa.get(i).getApellidos().startsWith(abizena)) {
+                System.out.println("Aurkitu da bilatu nahi zenuena! " + selekzioa.get(i));
+            }
+        }
+    }
+
+    public static void partaideakAlfabetikokiIkusi() {
+        Collections.sort(selekzioa, new Comparator<IntegranteSeleccion>() {
+            @Override
+            public int compare(IntegranteSeleccion o1, IntegranteSeleccion o2) {
+                return o1.getApellidos().compareTo(o2.getApellidos());
+            }
+        });
+
+        for (int i = 0; i < selekzioa.size(); i++) {
+            System.out.println(selekzioa.get(i));
         }
     }
 }
