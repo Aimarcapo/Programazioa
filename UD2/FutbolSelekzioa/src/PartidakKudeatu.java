@@ -1,5 +1,6 @@
-import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class PartidakKudeatu {
 
     private static ArrayList<IntegranteSeleccion> selekzioa = new ArrayList();
@@ -54,11 +55,17 @@ public class PartidakKudeatu {
      * Wikipediako orrian agertzen diren lehen partiden datuak txertatu partiden
      * arrayean.
      */
-    public static int hasierakoPartidakErregistratu() {
-
-       partidak[1]=new Partida(1915 3, "Katalunia", 2);
-       return partidak[1];
-    }
+    public static Partida[] hasierakoPartidakErregistratu() {
+        int i=0;
+    partidak[i++]=new Partida(LocalDate.of(1990,03,21), "Errumania",null );
+    partidak[i++]=new Partida(LocalDate.of(1993,12,22), "Bolivia",null );
+    partidak[i++]=new Partida(LocalDate.of(1994,12,23), "Rusia",null );
+    partidak[i++]=new Partida(LocalDate.of(1995,12,22), "Paraguay",null );
+    partidak[i++]=new Partida(LocalDate.of(1996,12,26), "Estonia",null );
+    partidak[i++]=new Partida(LocalDate.of(2021,12,28), "Brazil",null );
+    partidak[i++]=new Partida(LocalDate.of(2022,12,28), "Senegal",null );
+    return partidak;
+}
 
     /**
      * Partida berri baten datuak erabiltzaileari eskatu eta partida objektua

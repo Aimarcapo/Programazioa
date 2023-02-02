@@ -173,7 +173,7 @@ public class EuskalSelekzioMenua {
         }
 
         Collections.sort(futbolistak, new Comparator<IntegranteSeleccion>() {
-            @Override
+           
             public int compare(IntegranteSeleccion o1, IntegranteSeleccion o2) {
                 return o1.getApellidos().compareTo(o2.getApellidos());
             }
@@ -186,7 +186,7 @@ public class EuskalSelekzioMenua {
 
     public static void aldaketa() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Nor aldatu nahi duzu pstuz (Idatzi id-a): ");
+        System.out.println("Nor aldatu nahi duzu postuz (Idatzi id-a): ");
         int id = in.nextInt();
 
         for (int i = 0; i < selekzioa.size(); i++) {
