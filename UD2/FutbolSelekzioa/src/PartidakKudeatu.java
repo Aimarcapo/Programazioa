@@ -1,10 +1,17 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 
 public class PartidakKudeatu {
 
     private static ArrayList<IntegranteSeleccion> selekzioa = new ArrayList();
     private static Partida[] partidak = new Partida[200];
+    private static int contador = 0;
 
     /**
      * Programa honek selekzioa eta hasierako partiden datuak kargatu ondoren
@@ -15,6 +22,11 @@ public class PartidakKudeatu {
      */
     public static void main(String[] args) {
 
+        selekzioOsoaSortu();
+        hasierakoPartidakErregistratu();
+        partidaBatenDatuakEskatu();
+        partidakBistaratu();
+        estatistikak();
     }
 
     /**
@@ -56,35 +68,86 @@ public class PartidakKudeatu {
      * arrayean.
      */
     public static int hasierakoPartidakErregistratu() {
-        int i=0;
-    partidak[i++]=new Partida(LocalDate.of(1990,03,21), "Errumania",null );
-    partidak[i++]=new Partida(LocalDate.of(1993,12,22), "Bolivia",null );
-    partidak[i++]=new Partida(LocalDate.of(1994,12,23), "Rusia",null );
-    partidak[i++]=new Partida(LocalDate.of(1995,12,22), "Paraguay",null );
-    partidak[i++]=new Partida(LocalDate.of(1996,12,26), "Estonia",null );
-    partidak[i++]=new Partida(LocalDate.of(2021,12,28), "Brazil",null );
-    partidak[i++]=new Partida(LocalDate.of(2022,12,28), "Senegal",null );
-    return i;
-}
+        partidak[contador++] = new Partida(LocalDate.of(1990, 03, 21), "Errumania", null);
+        partidak[contador++] = new Partida(LocalDate.of(1993, 12, 22), "Bolivia", null);
+        partidak[contador++] = new Partida(LocalDate.of(1994, 12, 23), "Rusia", null);
+        partidak[contador++] = new Partida(LocalDate.of(1995, 12, 22), "Paraguay", null);
+        partidak[contador++] = new Partida(LocalDate.of(1996, 12, 26), "Estonia", null);
+        partidak[contador++] = new Partida(LocalDate.of(2021, 12, 28), "Brazil", null);
+        partidak[contador++] = new Partida(LocalDate.of(2022, 12, 28), "Senegal", null);
+        return contador;
+    }
 
     /**
      * Partida berri baten datuak erabiltzaileari eskatu eta partida objektua
      * bueltatu.
      */
     public static Partida partidaBatenDatuakEskatu() {
+        String erantzun;
+        Scanner sc = new Scanner(System.in);
+        char opcion = 'a';
+        ArrayList<Futbolista> tarjetas = new ArrayList<>();
+        Partida p = null;
+        while (opcion != 'e') {
 
-        return null;
+            System.out.println("Partida baten datuak sartu nahi dituzu(b/e):");
+            opcion = sc.next().charAt(0);
+
+            if (opcion == 'b') {
+                System.out.println("Noiz jokatu zen (uuuu-hh-ee)?");
+                String fecha = sc.next();
+                String[] result = fecha.split("-");// [0] --> año, [1] -->mes, [2] --> dia
+
+                System.out.println("Noren kontra?");
+                String rival = sc.next();
+
+                System.out.println(
+                        "Selekzioko jokalariren batek jaso al zuen txartelik? (Sartu dorsalak, komaz banatuta edo sakatu ENTER)");
+                String amonestados = sc.next();
+
+                String[] lista_amonestados = amonestados.split(",");
+
+                for (int i = 0; i < selekzioa.size(); i++) { // 8
+                    for (int j = 0; j < lista_amonestados.length; j++) { // 5,6,17
+
+                        int dorsal = Integer.parseInt(lista_amonestados[j]);
+                        if (selekzioa.get(i) instanceof Futbolista) {
+                            if (selekzioa.get(i).getId() == dorsal) {
+                                tarjetas.add((Futbolista) selekzioa.get(i));
+                            }
+                        }
+                    }
+                }
+
+                p = new Partida(LocalDate.of(Integer.parseInt(result[0]), Integer.parseInt(result[1]),
+                        Integer.parseInt(result[2])), rival, tarjetas);
+                partidak[contador++] = p;
+                tarjetas = new ArrayList<>();
+            } else {
+                break;
+            }
+
+        }
+
+        return p;
     }
 
     /** Partiden zerrenda bistaratu. */
     public static void partidakBistaratu() {
+        System.out.println("PARTIDEN ZERRENDA");
+        System.out.println("=======================");
 
+        for (int i = 0; i < partidak.length; i++) {
+            if (partidak[i] != null) {
+                System.out.println(partidak[i].toString());
+            }
+        }
     }
 
     /**
      * Metodo honek hainbat estatistika kalkulatu eta kontsolatik inprimatuko ditu.
      * Adibidez:
-     * 
+     
      * - Jokatutako partida kopurua
      * - Zein izan den partidarik gogorrena txartel kopuruari dagokionez
      * - Txartel kopurua jokalariko
@@ -95,6 +158,34 @@ public class PartidakKudeatu {
      * - ...
      */
     public static void estatistikak() {
+
+        System.out.println("ESTATISTIKAK:");
+        System.out.println("=================");
+
+        System.out.println("Jokatutako partida kopurua: " + contador);
+
+        System.out.println("Txartelak dauzkaten jokalariak: ");
+
+        ArrayList<String> amonestados = new ArrayList<>();
+
+        for (int i = 0; i < partidak.length; i++) {
+            if (partidak[i] != null) {
+
+                if (partidak[i].getTxartelak() != null) {
+                    for (int j = 0; j < partidak[i].getTxartelak().size(); j++) {
+                        Futbolista f = partidak[i].getTxartelak().get(j);
+                        amonestados.add(f.getNombre() +" " +f.getApellidos());
+                    }
+                }
+
+            }
+        }
+
+        List aLista = amonestados;
+        Set<String> distinct = new HashSet<>(aLista);
+        for (String s: distinct) {
+            System.out.println(s + " jokalariak " + Collections.frequency(aLista, s) +" txartel jaso ditu");
+        }
     }
 
 }

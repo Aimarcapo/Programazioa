@@ -1,9 +1,11 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 public class Partida {
+    
     private LocalDate data;
     private String aurkaria;
     private ArrayList <Futbolista> txartelak;
+
     public Partida(LocalDate data, String aurkaria, ArrayList<Futbolista> txartelak) {
         this.data = data;
         this.aurkaria = aurkaria;
