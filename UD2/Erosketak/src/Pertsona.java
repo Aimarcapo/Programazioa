@@ -16,10 +16,6 @@ public class Pertsona extends Bezeroa {
         return abizena;
     }
 
-   
-
-   
-
     public Pertsona(String izena, String abizena, String emaila) {
         this.izena = izena;
         this.abizena = abizena;
