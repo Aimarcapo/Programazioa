@@ -6,6 +6,11 @@ public class Produktua {
     private double prezioa;
 
 
+    public Produktua(char[] kodea, String izena, double prezioa) {
+        this.kodea = kodea;
+        this.izena = izena;
+        this.prezioa = prezioa;
+    }
     public char[] getKodea() {
         return kodea;
     }

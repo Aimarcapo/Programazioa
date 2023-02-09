@@ -7,6 +7,22 @@ public abstract class Bezeroa {
     }
 
 
+    public Bezeroa() {
+    }
+
+
+    public Bezeroa(int kodea, String helbidea) {
+        this.kodea = kodea;
+        this.helbidea = helbidea;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Bezeroa [kodea=" + kodea + ", helbidea=" + helbidea + "]";
+    }
+
+
     public String getHelbidea() {
         return helbidea;
     }    

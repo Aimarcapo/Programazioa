@@ -11,6 +11,9 @@ public class Erosketa {
     protected ArrayList<Integer> unitateak;
     protected double guztira;
 
+    public Erosketa() {
+    }
+
     public Erosketa(String kodea, Bezeroa bezeroa, double guztira) {
         for (int i = 0; i < kodea.length(); i++) {
             this.kodea[i] = kodea.charAt(i);
