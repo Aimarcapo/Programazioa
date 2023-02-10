@@ -1,7 +1,4 @@
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 public class Testa {
     public static void main(String[] args) {
         Bezeroa karlos = new Pertsona(1,"Karlos","Argiñano","Hondartza Pasialekua z/g ZARAUTZ","kargi@uni.eus");
