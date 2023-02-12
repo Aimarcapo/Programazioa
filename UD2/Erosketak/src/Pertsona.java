@@ -3,26 +3,10 @@ public class Pertsona extends Bezeroa {
     private String abizena;
     private String emaila;
    
+    
 
-    public String getIzena() {
-        return izena;
-    }
-
-    public String getEmaila() {
-        return emaila;
-    }
-
-    public String getAbizena() {
-        return abizena;
-    }
-
-    public Pertsona(String izena, String abizena, String emaila) {
-        this.izena = izena;
-        this.abizena = abizena;
-        this.emaila = emaila;
-    }
-
-    public Pertsona(int kodea, String helbidea, String izena, String abizena, String emaila) {
+   
+    public Pertsona(int kodea, String izena, String abizena, String helbidea, String emaila) {
         super(kodea, helbidea);
         this.izena = izena;
         this.abizena = abizena;
@@ -31,7 +15,32 @@ public class Pertsona extends Bezeroa {
 
     @Override
     public String toString() {
-        return super.toString()+"Pertsona [izena=" + izena + ", abizena=" + abizena + ", emaila=" + emaila + "]";
+        return "Pertsona [kodea="+this.getKodea() +  ", izena=" + izena + ", abizena=" + abizena + ",helbidea="+getHelbidea() +", emaila=" + emaila + "]";
     }
+
+    @Override
+    public String getIzena() {
+        return izena + " " + abizena;
+    }
+
+    public void setIzena(String izena) {
+        this.izena = izena;
+    }
+
+    public String getAbizena() {
+        return abizena;
+    }
+
+    public void setAbizena(String abizena) {
+        this.abizena = abizena;
+    }
+
+    public String getEmaila() {
+        return emaila;
+    }
+
+    public void setEmaila(String emaila) {
+        this.emaila = emaila;
+    }   
     
 }

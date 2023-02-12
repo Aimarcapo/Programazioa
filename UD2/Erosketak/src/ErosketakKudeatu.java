@@ -11,7 +11,7 @@ public class ErosketakKudeatu {
 
         initialize();
         menuNagusiaErakutsi();
-        
+
     }
 
     public static void initialize() {
@@ -68,6 +68,7 @@ public class ErosketakKudeatu {
     public static int readMenuErakutsi() {
         Scanner teclado = new Scanner(System.in);
         int opcion = teclado.nextInt();
+        teclado.close();
         return opcion;
     }
 
@@ -94,6 +95,6 @@ public class ErosketakKudeatu {
             epeea = false;
         }
         System.out.println("");
-
+        sc.close();
     }
 }

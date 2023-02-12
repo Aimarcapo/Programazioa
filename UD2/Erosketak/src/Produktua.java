@@ -6,15 +6,18 @@ public class Produktua {
     private double prezioa;
 
     public Produktua(String kodea, String izena, double prezioa) {
-        for (int i = 0; i < kodea.length(); i++) {
-            this.kodea[i] = kodea.charAt(i);
-        }
+        this.kodea=kodea.toCharArray();
         this.izena = izena;
         this.prezioa = prezioa;
     }
 
-    public char[] getKodea() {
-        return kodea;
+    public String getKodea() {
+        String kodeaS = "";
+        for (int i = 0; i < kodea.length; i++) {
+            char momChar = this.kodea[i];
+            kodeaS += momChar;
+        }
+        return kodeaS;
     }
 
     public void setKodea(char[] kodea) {
@@ -39,7 +42,7 @@ public class Produktua {
 
     @Override
     public String toString() {
-        return "Produktua [kodea=" + Arrays.toString(kodea) + ", izena=" + izena + ", prezioa=" + prezioa + "]";
+        return "Produktua [kodea=" + this.getKodea() + ", izena=" + izena + ", prezioa=" + prezioa + "]";
     }
 
 }

@@ -27,6 +27,16 @@ public abstract class Bezeroa {
         return helbidea;
     }    
 
+    public void setKodea(int kodea) {
+        this.kodea = kodea;
+    }
+
+
+    public void setHelbidea(String helbidea) {
+        this.helbidea = helbidea;
+    }
+
+
     public abstract String getIzena();
 
     public abstract String getEmaila();

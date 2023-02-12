@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class Enpresa extends Bezeroa {
     
     private String izenJuridikoa;
-    private String izenKomertziala;
+    private int izenKomertziala;
     private String[] kontaktoen_emailak;
 
     public String getIzena() {
         return izenJuridikoa;
     }
-    public String getIzenKomertziala() {
+    public int getIzenKomertziala() {
         return izenKomertziala;
     }
     public String[] getKontaktoen_emailak() {
@@ -17,18 +17,20 @@ public class Enpresa extends Bezeroa {
     }
 
     public String getEmaila(){
-        return getKontaktoen_emailak()[0];
+        return kontaktoen_emailak[0];
     }
-    public Enpresa(int kodea, String helbidea, String izenJuridikoa, String izenKomertziala,
-            String[] kontaktoen_emailak) {
-        super(kodea, helbidea);
-        this.izenJuridikoa = izenJuridikoa;
-        this.izenKomertziala = izenKomertziala;
+  
+    public Enpresa(int izenKomertziala,String izenJuridikoa, String[]kontaktoen_emailak){
+        this.izenKomertziala=izenKomertziala;
+        this.izenJuridikoa=izenJuridikoa;
         this.kontaktoen_emailak = kontaktoen_emailak;
+    }
+    public Enpresa(int bezeroKode, String helbidea, String izenJuridikoa2, String izenKomertziala2,
+            String[] kontaktoenEmailak) {
     }
     @Override
     public String toString() {
-        return "Enpresa [izenJuridikoa=" + izenJuridikoa + ", izenKomertziala=" + izenKomertziala
+        return "Enpresa [kodea=" + izenKomertziala + ", izenJuridikoa=" + izenJuridikoa
                 + ", kontaktoen_emailak=" + Arrays.toString(kontaktoen_emailak) + "]";
     }
     
