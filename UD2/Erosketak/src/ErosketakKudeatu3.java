@@ -129,7 +129,7 @@ public class ErosketakKudeatu3 {
             produktuIzena = sc.nextLine();
             System.out.print("\tPrezioa: ");
             prezioa = in.nextDouble();
-
+sc.close();
             produktuak.add(new Produktua(produktuKode, produktuIzena, prezioa));
 
             System.out.print("\tBeste produktu bat gorde nahi duzu? (B/E) ");
@@ -168,7 +168,9 @@ public class ErosketakKudeatu3 {
             abizena = sc3.nextLine();
             System.out.print("\tEmaila: ");
             emaila = in.next();
-
+sc3.close();
+sc2.close();
+sc1.close();
             //BEZEROA SORTU
             bezeroa = new Pertsona(bezeroKode, helbidea, bezeroIzena, abizena, emaila);
         } else if(bezeroMota.equals("enpresa")){
@@ -197,7 +199,9 @@ public class ErosketakKudeatu3 {
                 System.out.print("\t\t" + (i+1) + ". Emaila: ");
                 kontaktoenEmailak[i] = in.next();
             }
-
+sc1.close();
+sc2.close();
+sc3.close();
             //BEZEROA SORTU
             bezeroa = new Enpresa(bezeroKode, helbidea, izenJuridikoa, izenKomertziala, kontaktoenEmailak);
         } else {
@@ -374,7 +378,7 @@ public class ErosketakKudeatu3 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Esan pertsonaren abizena: ");
         abizena = sc.nextLine();
-
+sc.close();
         for (int i = 0; i < erosketak.size(); i++) {
             if(erosketak.get(i).getBezeroa() instanceof Pertsona){
                 if(((Pertsona)erosketak.get(i).getBezeroa()).getAbizena().equals(abizena)){

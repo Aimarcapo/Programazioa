@@ -1,17 +1,17 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 public class ErosketakKudeatu2 {
     private static Scanner sc = new Scanner(System.in);
-    private static ArrayList<Bezeroa> kontaktuak;
-    private static ArrayList<Produktua> produktuKatalogoak;
     private static ArrayList<Erosketa> erosketenZerrenda = new ArrayList<>();
     private static ArrayList<Erosketa> erosketak = new ArrayList<>();
 
     public static void main(String[] args) {
 
         int opcion;
-        hasierakoErosketakSortu();
+        initialize();
         do {
             System.out.println("\n");
             System.out.println("*********************************************");
@@ -28,7 +28,7 @@ public class ErosketakKudeatu2 {
 
             switch (opcion) {
                 case 1:
-                    create();
+                    create2();
                     break;
                 case 2:
                     readMenuErakutsi();
@@ -51,7 +51,7 @@ public class ErosketakKudeatu2 {
         System.out.println("Programa bukatuta");
     }
 
-    public static void hasierakoErosketakSortu() {
+    public static void initialize() {
         // EROSKETAK SORTU
         // LEHENENGO EROSKETA SORTU
         ArrayList<Produktua> produktuak1 = new ArrayList<>();
@@ -110,11 +110,7 @@ public class ErosketakKudeatu2 {
                 unitateak5, 15000));
     }
 
-    public static void initialize() {
-        kontaktuak = new ArrayList<>();
-        produktuKatalogoak = new ArrayList<>();
-        erosketenZerrenda = new ArrayList<>();
-    }
+   
 
     public static int readMenuErakutsi() {
         int opcion;
@@ -161,6 +157,40 @@ public class ErosketakKudeatu2 {
         return opcion;
     }
 
+    public static void create2() {
+        
+        String erosketaKodea;
+        int bezeroKodea;
+        double guztira;
+        char epekakoa;
+        boolean egiaztatu;
+        Bezeroa cliente=erosketenZerrenda.get(0).getBezeroa();
+        System.out.println("EROSKETA BERRIA");
+        System.out.println("------------------------------------------------");
+        System.out.print("Sartu erosketa kodea: ");
+        erosketaKodea = sc.next();
+        System.out.println("Sartu bezero kodea");
+        bezeroKodea = sc.nextInt();
+        System.out.println("Sartu guztira");
+        guztira = sc.nextDouble();
+        System.out.print("Epekako erosketa da? (B/E) ");
+        epekakoa = sc.next().charAt(0);
+        if (epekakoa == 'B') {
+            egiaztatu = true;
+        } else {
+            egiaztatu = false;
+        }
+        for (int i = 0; i < erosketenZerrenda.size(); i++) {
+            if (bezeroKodea == erosketenZerrenda.get(i).getBezeroa().getKodea()) {
+                cliente = erosketenZerrenda.get(i).getBezeroa();
+            }
+        }
+        
+            erosketenZerrenda.add(new Erosketa(erosketaKodea, cliente, guztira));
+        
+
+    }
+
     public static void create() {
         String erosketaKodea;
         String data;
@@ -194,7 +224,7 @@ public class ErosketakKudeatu2 {
             produktuIzena = sc.nextLine();
             System.out.print("\tPrezioa: ");
             prezioa = sc.nextDouble();
-
+sc.close();
             produktuak.add(new Produktua(produktuKode, produktuIzena, prezioa));
 
             System.out.print("\tBeste produktu bat gorde nahi duzu? (B/E) ");
@@ -233,7 +263,9 @@ public class ErosketakKudeatu2 {
             abizena = sc3.nextLine();
             System.out.print("\tEmaila: ");
             emaila = sc.next();
-
+sc1.close();
+sc3.close();
+sc2.close();
             // BEZEROA SORTU
             bezeroa = new Pertsona(bezeroKode, helbidea, bezeroIzena, abizena, emaila);
         } else if (bezeroMota.equals("enpresa")) {
@@ -262,7 +294,9 @@ public class ErosketakKudeatu2 {
                 System.out.print("\t\t" + (i + 1) + ". Emaila: ");
                 kontaktoenEmailak[i] = sc.next();
             }
-
+sc1.close();
+sc2.close();
+sc3.close();
             // BEZEROA SORTU
             bezeroa = new Enpresa(bezeroKode, helbidea, izenJuridikoa, izenKomertziala, kontaktoenEmailak);
         } else {
@@ -327,17 +361,18 @@ public class ErosketakKudeatu2 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Zein erosketa borratu nahi duzu, esan bere kodigoa:");
         kodigoa = sc.next();
-
+sc.close();
         for (int i = 0; i < erosketak.size(); i++) {
             if (erosketenZerrenda.get(i).getKodea().equals(kodigoa)) {
                 erosketenZerrenda.remove(i);
             }
         }
+        
     }
 
     public static void erosketenZerrenda() {
         for (int i = 0; i < erosketenZerrenda.size(); i++) {
-            System.out.println((i + 1) + ". " + erosketenZerrenda.get(i));
+            System.out.println((i + 1) + ". " + erosketenZerrenda.get(i).toString());
             System.out.println("");
         }
     }
@@ -372,6 +407,7 @@ public class ErosketakKudeatu2 {
                 System.out.println("Aurkitu da bilatu nahi zenuena" + erosketenZerrenda.get(i));
             }
         }
+        sc.close();
     }
 
     public static void epekakoErosketenTxostena() {
@@ -382,9 +418,10 @@ public class ErosketakKudeatu2 {
                 "-----------------------------------------------------------------------------------------------------------------------------------------\n");
         for (int i = 0; i < erosketenZerrenda.size(); i++) {
             if (erosketenZerrenda.get(i) instanceof EpekakoErosketa) {
-              
-                System.out.println(((EpekakoErosketa)erosketenZerrenda.get(i)).toStringLuzea());
+
+                System.out.println(((EpekakoErosketa) erosketenZerrenda.get(i)).toStringLuzea());
             }
         }
     }
+    
 }

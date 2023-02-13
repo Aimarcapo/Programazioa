@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Erosketa {
     protected char[] kodea;
-    protected LocalDate data;
+    protected LocalDate data=LocalDate.now();
     protected Bezeroa bezeroa;
     protected ArrayList<Produktua> produktuak;
     protected ArrayList<Integer> unitateak;
@@ -12,6 +12,13 @@ public class Erosketa {
 
     public Erosketa(String kodea, Bezeroa bezeroa, double guztira) {
         this.kodea = kodea.toCharArray();
+        this.data=data;
+        this.bezeroa = bezeroa;
+        this.guztira = guztira;
+    }
+    public Erosketa(String kodea,String data, Bezeroa bezeroa, double guztira) {
+        this.kodea = kodea.toCharArray();
+        this.data = LocalDate.parse(data);
         this.bezeroa = bezeroa;
         this.guztira = guztira;
     }
@@ -31,7 +38,7 @@ public class Erosketa {
 
     
 
-    @Override
+   
     public String toString() {
         return "Erosketa [kodea=" + this.getKodea() + ", data=" + data + ", bezeroa=" + bezeroa + ", produktuak="
                 + produktuak + ", unitateak=" + unitateak + ", guztira=" + guztira + "]";
