@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 
 
@@ -9,10 +10,13 @@ public class ErosketakKudeatu2 {
     private static ArrayList<Erosketa> erosketak = new ArrayList<>();
 
     public static void main(String[] args) {
-
-        int opcion;
+    boolean ondo=false;
+        int opcion=0;
         initialize();
         do {
+           
+
+            
             System.out.println("\n");
             System.out.println("*********************************************");
             System.out.println("*  EROSKETEN KUDEAKETA");
@@ -23,10 +27,19 @@ public class ErosketakKudeatu2 {
             System.out.println("*  4.  Delete (Ezabatu)");
             System.out.println("*  20. Irten");
             System.out.println("*  ---------------------------------------");
-            System.out.print("* Aukeratu zenbaki bat: ");
-            opcion = sc.nextInt();
-
-            switch (opcion) {
+            do{
+                try{
+                    System.out.print("Aukeratu zenbaki bat: ");
+                    opcion = sc.nextInt();
+                    ondo = true;
+                } catch(InputMismatchException ex) {
+                    System.out.println("Zenbaki bat izan behar da.");
+                    sc.next();
+                }
+            }while(!ondo);
+            
+            System.out.println("");
+            switch(opcion){
                 case 1:
                     create2();
                     break;
@@ -42,11 +55,9 @@ public class ErosketakKudeatu2 {
                 case 20:
                     break;
                 default:
-                    System.out.println("Erantzun okerra");
-                    break;
-
+                    System.out.println("Sartutako aukera ez da existitzen.");
             }
-        } while (opcion != 20);
+        }while(opcion != 20);
 
         System.out.println("Programa bukatuta");
     }
