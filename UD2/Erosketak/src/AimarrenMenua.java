@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 
 
 
-public class ErosketakKudeatu2 {
+public class AimarrenMenua {
     private static Scanner sc = new Scanner(System.in);
     private static ArrayList<Erosketa> erosketenZerrenda = new ArrayList<>();
     private static ArrayList<Erosketa> erosketak = new ArrayList<>();
@@ -169,11 +169,13 @@ public class ErosketakKudeatu2 {
     }
 
     public static void create2() {
-        
+        boolean ordainketaBukatuta=false;
         String erosketaKodea;
         int bezeroKodea;
         double guztira;
         char epekakoa;
+        int epe;
+        double kuota;
         boolean egiaztatu;
         Bezeroa cliente=erosketenZerrenda.get(0).getBezeroa();
         System.out.println("EROSKETA BERRIA");
@@ -186,21 +188,29 @@ public class ErosketakKudeatu2 {
         guztira = sc.nextDouble();
         System.out.print("Epekako erosketa da? (B/E) ");
         epekakoa = sc.next().charAt(0);
-        if (epekakoa == 'B') {
-            egiaztatu = true;
-        } else {
-            egiaztatu = false;
-        }
         for (int i = 0; i < erosketenZerrenda.size(); i++) {
             if (bezeroKodea == erosketenZerrenda.get(i).getBezeroa().getKodea()) {
                 cliente = erosketenZerrenda.get(i).getBezeroa();
             }
         }
-        
+        if (epekakoa == 'B') {
+            System.out.println("Zenbat epe?");
+            epe=sc.nextInt();
+            System.out.println("Zein kuota izan zen?");
+            kuota=sc.nextDouble();
+            egiaztatu = true;
+            erosketenZerrenda.add(new EpekakoErosketa(erosketaKodea, cliente, guztira, epe, ordainketaBukatuta, kuota));
+        } else {
+            egiaztatu = false;
             erosketenZerrenda.add(new Erosketa(erosketaKodea, cliente, guztira));
+            }
+            
+                
+        }
+        
         
 
-    }
+    
 
     public static void create() {
         String erosketaKodea;

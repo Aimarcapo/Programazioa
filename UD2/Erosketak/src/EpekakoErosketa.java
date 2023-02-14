@@ -50,7 +50,7 @@ public class EpekakoErosketa extends Erosketa {
     //TOSTRING 
     @Override
     public String toString() {
-        return "EpekakoErosketa [epeak=" + epeak + ", ordainketakBukatua=" + ordainketakBukatua + ", kuota=" + kuota
+        return "EpekakoErosketa [kodea= "+this.getKodea()+", epeak=" + epeak + ", data="+this.getData()+", ordainketakBukatua=" + ordainketakBukatua + ", kuota=" + kuota
                 + "]";
     }
 

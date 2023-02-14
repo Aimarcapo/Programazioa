@@ -12,21 +12,21 @@ public class Enpresa extends Bezeroa {
     public int getIzenKomertziala() {
         return izenKomertziala;
     }
-    public String[] getKontaktoen_emailak() {
-        return kontaktoen_emailak;
-    }
+   
 
     public String getEmaila(){
         return kontaktoen_emailak[0];
     }
   
-    public Enpresa(int izenKomertziala,String izenJuridikoa, String[]kontaktoen_emailak){
+    public Enpresa(int kodea,int izenKomertziala,String izenJuridikoa,String helbidea, String[] kontaktoen_emailak){
+        super.setKodea(kodea);
         this.izenKomertziala=izenKomertziala;
         this.izenJuridikoa=izenJuridikoa;
         this.kontaktoen_emailak = kontaktoen_emailak;
+        this.helbidea=helbidea;
     }
-    public Enpresa(int bezeroKode, String helbidea, String izenJuridikoa2, String izenKomertziala2,
-            String[] kontaktoenEmailak) {
+   
+    public Enpresa(int kodea, String string, String izenJuridikoa2, String helbidea, String[] kontaktoenEmailak) {
     }
     @Override
     public String toString() {
