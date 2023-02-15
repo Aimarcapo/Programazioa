@@ -3,13 +3,13 @@ import java.util.Arrays;
 public class Enpresa extends Bezeroa {
     
     private String izenJuridikoa;
-    private int izenKomertziala;
+    private String izenKomertziala;
     private String[] kontaktoen_emailak;
 
     public String getIzena() {
         return izenJuridikoa;
     }
-    public int getIzenKomertziala() {
+    public String getIzenKomertziala() {
         return izenKomertziala;
     }
    
@@ -18,7 +18,7 @@ public class Enpresa extends Bezeroa {
         return kontaktoen_emailak[0];
     }
   
-    public Enpresa(int kodea,int izenKomertziala,String izenJuridikoa,String helbidea, String[] kontaktoen_emailak){
+    public Enpresa(int kodea,String izenKomertziala,String izenJuridikoa,String helbidea, String[] kontaktoen_emailak){
         super.setKodea(kodea);
         this.izenKomertziala=izenKomertziala;
         this.izenJuridikoa=izenJuridikoa;
@@ -26,13 +26,13 @@ public class Enpresa extends Bezeroa {
         this.helbidea=helbidea;
     }
    
-    public Enpresa(int kodea, String string, String izenJuridikoa2, String helbidea, String[] kontaktoenEmailak) {
-    }
+    
     @Override
     public String toString() {
-        return "Enpresa [kodea=" + izenKomertziala + ", izenJuridikoa=" + izenJuridikoa
+        return "Enpresa [izenJuridikoa=" + izenJuridikoa + ", izenKomertziala=" + izenKomertziala
                 + ", kontaktoen_emailak=" + Arrays.toString(kontaktoen_emailak) + "]";
     }
+    
     
 
 }

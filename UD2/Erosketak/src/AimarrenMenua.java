@@ -2,21 +2,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-
-
 public class AimarrenMenua {
     private static Scanner sc = new Scanner(System.in);
     private static ArrayList<Erosketa> erosketenZerrenda = new ArrayList<>();
     private static ArrayList<Erosketa> erosketak = new ArrayList<>();
 
     public static void main(String[] args) {
-    boolean ondo=false;
-        int opcion=0;
+        boolean ondo = false;
+        int opcion = 0;
         initialize();
         do {
-           
 
-            
             System.out.println("\n");
             System.out.println("*********************************************");
             System.out.println("*  EROSKETEN KUDEAKETA");
@@ -27,19 +23,19 @@ public class AimarrenMenua {
             System.out.println("*  4.  Delete (Ezabatu)");
             System.out.println("*  20. Irten");
             System.out.println("*  ---------------------------------------");
-            do{
-                try{
+            do {
+                try {
                     System.out.print("Aukeratu zenbaki bat: ");
                     opcion = sc.nextInt();
                     ondo = true;
-                } catch(InputMismatchException ex) {
+                } catch (InputMismatchException ex) {
                     System.out.println("Zenbaki bat izan behar da.");
                     sc.next();
                 }
-            }while(!ondo);
-            
+            } while (!ondo);
+
             System.out.println("");
-            switch(opcion){
+            switch (opcion) {
                 case 1:
                     create2();
                     break;
@@ -57,7 +53,7 @@ public class AimarrenMenua {
                 default:
                     System.out.println("Sartutako aukera ez da existitzen.");
             }
-        }while(opcion != 20);
+        } while (opcion != 20);
 
         System.out.println("Programa bukatuta");
     }
@@ -121,8 +117,6 @@ public class AimarrenMenua {
                 unitateak5, 15000));
     }
 
-   
-
     public static int readMenuErakutsi() {
         int opcion;
 
@@ -169,15 +163,15 @@ public class AimarrenMenua {
     }
 
     public static void create2() {
-        boolean ordainketaBukatuta=false;
+
+        boolean ordainketaBukatuta = false;
         String erosketaKodea;
         int bezeroKodea;
         double guztira;
         char epekakoa;
         int epe;
         double kuota;
-        boolean egiaztatu;
-        Bezeroa cliente=erosketenZerrenda.get(0).getBezeroa();
+        Bezeroa cliente = erosketenZerrenda.get(0).getBezeroa();
         System.out.println("EROSKETA BERRIA");
         System.out.println("------------------------------------------------");
         System.out.print("Sartu erosketa kodea: ");
@@ -195,22 +189,17 @@ public class AimarrenMenua {
         }
         if (epekakoa == 'B') {
             System.out.println("Zenbat epe?");
-            epe=sc.nextInt();
+            epe = sc.nextInt();
             System.out.println("Zein kuota izan zen?");
-            kuota=sc.nextDouble();
-            egiaztatu = true;
+            kuota = sc.nextDouble();
+
             erosketenZerrenda.add(new EpekakoErosketa(erosketaKodea, cliente, guztira, epe, ordainketaBukatuta, kuota));
         } else {
-            egiaztatu = false;
-            erosketenZerrenda.add(new Erosketa(erosketaKodea, cliente, guztira));
-            }
-            
-                
-        }
-        
-        
 
-    
+            erosketenZerrenda.add(new Erosketa(erosketaKodea, cliente, guztira));
+        }
+
+    }
 
     public static void create() {
         String erosketaKodea;
@@ -245,7 +234,7 @@ public class AimarrenMenua {
             produktuIzena = sc.nextLine();
             System.out.print("\tPrezioa: ");
             prezioa = sc.nextDouble();
-sc.close();
+            sc.close();
             produktuak.add(new Produktua(produktuKode, produktuIzena, prezioa));
 
             System.out.print("\tBeste produktu bat gorde nahi duzu? (B/E) ");
@@ -284,9 +273,9 @@ sc.close();
             abizena = sc3.nextLine();
             System.out.print("\tEmaila: ");
             emaila = sc.next();
-sc1.close();
-sc3.close();
-sc2.close();
+            sc1.close();
+            sc3.close();
+            sc2.close();
             // BEZEROA SORTU
             bezeroa = new Pertsona(bezeroKode, helbidea, bezeroIzena, abizena, emaila);
         } else if (bezeroMota.equals("enpresa")) {
@@ -315,9 +304,9 @@ sc2.close();
                 System.out.print("\t\t" + (i + 1) + ". Emaila: ");
                 kontaktoenEmailak[i] = sc.next();
             }
-sc1.close();
-sc2.close();
-sc3.close();
+            sc1.close();
+            sc2.close();
+            sc3.close();
             // BEZEROA SORTU
             bezeroa = new Enpresa(bezeroKode, helbidea, izenJuridikoa, izenKomertziala, kontaktoenEmailak);
         } else {
@@ -382,13 +371,13 @@ sc3.close();
         Scanner sc = new Scanner(System.in);
         System.out.print("Zein erosketa borratu nahi duzu, esan bere kodigoa:");
         kodigoa = sc.next();
-sc.close();
+        sc.close();
         for (int i = 0; i < erosketak.size(); i++) {
             if (erosketenZerrenda.get(i).getKodea().equals(kodigoa)) {
                 erosketenZerrenda.remove(i);
             }
         }
-        
+
     }
 
     public static void erosketenZerrenda() {
@@ -444,5 +433,5 @@ sc.close();
             }
         }
     }
-    
+
 }
