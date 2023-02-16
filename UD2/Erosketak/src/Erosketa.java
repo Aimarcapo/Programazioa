@@ -12,7 +12,6 @@ public class Erosketa {
 
     public Erosketa(String kodea, Bezeroa bezeroa, double guztira) {
         this.kodea = kodea.toCharArray();
-        this.data=data;
         this.bezeroa = bezeroa;
         this.guztira = guztira;
     }
