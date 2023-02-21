@@ -40,8 +40,15 @@ public class Selekzioa {
             
         }
         System.out.println("Kide kopuru"+kideak.size());
-        
+        int suma = 0;
+        for(int i=0;i<kideak.size();i++){
+            if(kideak.get(i) instanceof Atezaina){                
+                Atezaina atezaina =  (Atezaina)kideak.get(i);
+                suma += atezaina.getGeratutakoGolak();
+            }
+        }       
 
+        System.out.println("GOLES: "+ suma);
        
 
     }
