@@ -1,3 +1,4 @@
+
 package dambat;
 
 import javafx.application.Application;
@@ -17,6 +18,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        stage.setTitle("KALKULAGAILUA");
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.show();
