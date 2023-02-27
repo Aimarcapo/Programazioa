@@ -21,10 +21,9 @@ public class Selekzioa {
     }
 
     public void kideakBistaratu() {
-        int z;
-        int golak;
-        Atezaina bai;
-        try{
+    
+        
+        
         if (nongoa == Nongoa.eus) {
             System.out.println("SELEKZIOA:EUSKADI");
         } else if (nongoa == Nongoa.uni) {
@@ -34,7 +33,7 @@ public class Selekzioa {
         for (int i = 0; i < kideak.size(); i++) {
             if (kideak.get(i) != null) {
                 System.out.println(kideak.get(i));
-                z = i;
+                
                 
             }
             
@@ -47,22 +46,19 @@ public class Selekzioa {
                 suma += atezaina.getGeratutakoGolak();
             }
         }       
-
-        System.out.println("GOLES: "+ suma);
+        System.out.println("------------------");
+        System.out.println("Kide kopurua "+kideak.size()+" GOLES: "+ suma);
        
 
-    }
-    catch(Exception e){
-        System.out.println("Gaizki dago");
-
-    }
+    
 }
 
     
 
     public int kideBerria(Kidea berria) {
+        
         kideak.add(berria);
-        return 0;
+        return kideak.size()+1;
     }
 
     public int kideaEzabatu(int id) {

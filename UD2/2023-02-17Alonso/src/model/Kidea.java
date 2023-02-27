@@ -1,8 +1,8 @@
 package model;
 
-import java.sql.Date;
+
 import java.text.DateFormat;
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -12,7 +12,7 @@ public abstract class Kidea {
     protected int id;
     protected String izena;
     protected String abizena;
-    protected LocalDate jaiotzeData = LocalDate.of(1900, 01, 01);
+    protected LocalDate jaiotzeData = LocalDate.of(1900, 01, 01);//Edo LocalDate.parse("")
     DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     public Kidea(int id, String izena, String abizena, String jaiotzeData) {
