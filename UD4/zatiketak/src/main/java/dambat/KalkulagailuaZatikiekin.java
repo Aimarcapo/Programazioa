@@ -1,4 +1,4 @@
-package dambat.controller;
+package dambat;
 
 import java.io.IOException;
 
@@ -21,77 +21,77 @@ public class KalkulagailuaZatikiekin {
     }
 
     @FXML
-    private void idatziBat(){
+    private void ponBat(){
         pantaila.setText(pantaila.getText() + "1");
     }
 
     @FXML
-    private void idatziBi(){
+    private void ponBi(){
         pantaila.setText(pantaila.getText() + "2");
     }
 
     @FXML
-    private void idatziHiru(){
+    private void ponHiru(){
         pantaila.setText(pantaila.getText() + "3");
     }
 
     @FXML
-    private void idatziLau(){
+    private void ponLau(){
         pantaila.setText(pantaila.getText() + "4");
     }
 
     @FXML
-    private void idatziBost(){
+    private void ponBost(){
         pantaila.setText(pantaila.getText() + "5");
     }
 
     @FXML
-    private void idatziSei(){
+    private void ponSei(){
         pantaila.setText(pantaila.getText() + "6");
     }
 
     @FXML
-    private void idatziZazpi(){
+    private void ponZazpi(){
         pantaila.setText(pantaila.getText() + "7");
     }
 
     @FXML
-    private void idatziZortzi(){
+    private void ponZortzi(){
         pantaila.setText(pantaila.getText() + "8");
     }
 
     @FXML
-    private void idatziBederatzi(){
+    private void ponBederatzi(){
         pantaila.setText(pantaila.getText() + "9");
     }
 
     @FXML
-    private void idatziZero(){
+    private void ponZero(){
         pantaila.setText(pantaila.getText() + "0");
     }
 
     @FXML
-    private void idatziGei(){
+    private void ponGei(){
         pantaila.setText(pantaila.getText() + " + ");
     }
 
     @FXML
-    private void idatziKen(){
+    private void ponKen(){
         pantaila.setText(pantaila.getText() + " - ");
     }
 
     @FXML
-    private void idatziZati(){
+    private void ponZati(){
         pantaila.setText(pantaila.getText() + " : ");
     }
 
     @FXML
-    private void idatziBider(){
+    private void ponBider(){
         pantaila.setText(pantaila.getText() + " x ");
     }
 
     @FXML
-    private void idatziBarra(){
+    private void ponBarra(){
         pantaila.setText(pantaila.getText() + "/");
     }
 

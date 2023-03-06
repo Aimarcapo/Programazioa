@@ -1,4 +1,4 @@
-package dambat.controller;
+package dambat;
 
 import java.io.IOException;
 
@@ -26,7 +26,7 @@ public class AzterketaNormala {
     @FXML
     Label zuzenketarenErantzuna;
 
-    int kontagailua = 1;
+    int kontagailua = 0;
     int ariketakOndo = 0;
     
     @FXML
@@ -104,8 +104,18 @@ public class AzterketaNormala {
     }
 
     @FXML
-    private void zuzenduEtaAldatu(){
+    private void zuzenduEtaAldatu() throws InterruptedException, IOException{
         zuzendu();
+        ausazkoAriketa();
+        /*
+        if(kontagailua > 10){
+            Thread.sleep(3000);
+            kalkulagailuNormala();
+        }*/
+    }
+
+    @FXML
+    protected void initialize(){
         ausazkoAriketa();
     }
 }

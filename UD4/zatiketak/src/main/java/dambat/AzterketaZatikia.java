@@ -1,4 +1,4 @@
-package dambat.controller;
+package dambat;
 
 import java.io.IOException;
 
@@ -35,7 +35,7 @@ public class AzterketaZatikia {
     @FXML
     Label zuzenketarenErantzuna;
 
-    int kontagailua = 1;
+    int kontagailua = 0;
     int ariketakOndo = 0;
     
     @FXML
@@ -119,6 +119,11 @@ public class AzterketaZatikia {
     @FXML
     private void zuzenduEtaAldatu(){
         zuzendu();
+        ausazkoAriketa();
+    }
+
+    @FXML
+    protected void initialize(){
         ausazkoAriketa();
     }
 }

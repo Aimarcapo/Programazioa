@@ -1,4 +1,4 @@
-package dambat.controller;
+package dambat;
 
 import java.io.IOException;
 

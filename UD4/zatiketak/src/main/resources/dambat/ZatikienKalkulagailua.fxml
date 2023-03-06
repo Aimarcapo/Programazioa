@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dambat.controller.KalkulagailuaZatikiekin">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dambat.KalkulagailuaZatikiekin">
    <children>
       <HBox prefHeight="47.0" prefWidth="600.0">
          <children>
@@ -34,46 +34,22 @@
       </HBox>
       <HBox prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="+" textFill="#1500ff" onAction="#idatziGei">
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="+" textFill="#1500ff" onAction="#ponGei">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="1" onAction="#idatziBat">
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="1" onAction="#ponBat">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="2"  onAction="#idatziBi">
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="2"  onAction="#ponBi">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="3" onAction="#idatziHiru">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-      <HBox prefHeight="80.0" prefWidth="600.0">
-         <children>
-            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="-" textFill="#1500ff" onAction="#idatziKen">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="4"  onAction="#idatziLau">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="5"  onAction="#idatziBost">
-               <font>
-                  <Font size="30.0" />
-               </font>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="6" onAction="#idatziSei">
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="3" onAction="#ponHiru">
                <font>
                   <Font size="30.0" />
                </font>
@@ -82,22 +58,22 @@
       </HBox>
       <HBox prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text=":" textFill="#1500ff"  onAction="#idatziZati">
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="-" textFill="#1500ff" onAction="#ponKen">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="7" onAction="#idatziZazpi">
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="4"  onAction="#ponLau">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="8" onAction="#idatziZortzi">
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="5"  onAction="#ponBost">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="9" onAction="#idatziBederatzi">
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="6" onAction="#ponSei">
                <font>
                   <Font size="30.0" />
                </font>
@@ -106,17 +82,41 @@
       </HBox>
       <HBox prefHeight="80.0" prefWidth="600.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="x" textFill="#1500ff"  onAction="#idatziBider">
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text=":" textFill="#1500ff"  onAction="#ponZati">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="0"  onAction="#idatziZero">
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="7" onAction="#ponZazpi">
                <font>
                   <Font size="30.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="/" textFill="#f13006"  onAction="#idatziBarra">
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="8" onAction="#ponZortzi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="9" onAction="#ponBederatzi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="x" textFill="#1500ff"  onAction="#ponBider">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="0"  onAction="#ponZero">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="/" textFill="#f13006"  onAction="#ponBarra">
                <font>
                   <Font size="30.0" />
                </font>

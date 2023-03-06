@@ -1,4 +1,4 @@
-package dambat.controller;
+package dambat;
 public class Zatikia {
 
     /*ALDAGAI PRIBATUAK SORTU*/

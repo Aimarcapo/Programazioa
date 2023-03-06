@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:controller="dambat.controller.AzterketaZatikia" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="dambat.AzterketaZatikia" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="47.0" prefWidth="600.0">
          <children>
@@ -41,7 +41,7 @@
          <children>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="4" fx:id="izendatzailea1">
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="" fx:id="izendatzailea1">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -50,7 +50,7 @@
                      </VBox.margin>
                   </Label>
                   <Line endX="25.292892456054688" endY="0.2928932309150696" startX="-100.0" />
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="3" fx:id="zenbakitzailea1">
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="" fx:id="zenbakitzailea1">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -63,7 +63,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </VBox>
-            <Label alignment="CENTER" prefHeight="135.0" prefWidth="56.0" text=":" fx:id="eragiketa">
+            <Label alignment="CENTER" prefHeight="135.0" prefWidth="56.0" text="" fx:id="eragiketa">
                <font>
                   <Font size="20.0" />
                </font>
@@ -73,7 +73,7 @@
             </Label>
             <VBox prefHeight="200.0" prefWidth="100.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="7" fx:id="izendatzailea2">
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="" fx:id="izendatzailea2">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -82,7 +82,7 @@
                      </VBox.margin>
                   </Label>
                   <Line endX="25.292892456054688" endY="0.2928932309150696" startX="-100.0" />
-                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="2" fx:id="zenbakitzailea2">
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="126.0" text="" fx:id="zenbakitzailea2">
                      <font>
                         <Font size="20.0" />
                      </font>
