@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="605.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dambat.KalkController">
+<VBox fx:controller="dambat.KalkController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="605.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label prefHeight="64.0" prefWidth="593.0" text="Zenbaki biren arteko eragiketa gauzatzeko sakatu &quot;=&quot; botoia.">
          <font>
@@ -28,7 +28,7 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="64.0" text="+">
+            <Button fx:id="buttonEragiketa" mnemonicParsing="false" prefHeight="66.0" prefWidth="64.0" text="+" onAction="#eragiketaAldatu">
                <font>
                   <Font size="20.0" />
                </font>
@@ -43,7 +43,7 @@
                   <Font size="20.0" />
                </font>
             </Button>
-            <Label fx:id="labelEmaitza" prefHeight="66.0" prefWidth="77.0" text="">
+            <Label fx:id="labelEmaitza" prefHeight="66.0" prefWidth="200.0" text="">
                <font>
                   <Font size="20.0" />
                </font>

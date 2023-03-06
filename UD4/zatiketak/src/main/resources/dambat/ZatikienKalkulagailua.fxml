@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dambat.controller.KalkulagailuaZatikiekin">
+   <children>
+      <HBox prefHeight="47.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="300.0" text="KALKULAGAILU NORMALA" textFill="#007924" onAction="#kalkulagailuNormala">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="300.0" text="AZTERKETA EGIN" textFill="#007924" onAction="#azterketaAukeratu">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="127.0" prefWidth="600.0">
+         <children>
+            <Label alignment="CENTER" text="" prefHeight="130.0" prefWidth="600.0" fx:id="pantaila">
+               <font>
+                  <Font size="40.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="+" textFill="#1500ff" onAction="#idatziGei">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="1" onAction="#idatziBat">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="2"  onAction="#idatziBi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="3" onAction="#idatziHiru">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text="-" textFill="#1500ff" onAction="#idatziKen">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="4"  onAction="#idatziLau">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="5"  onAction="#idatziBost">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="6" onAction="#idatziSei">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="110.0" prefWidth="150.0" text=":" textFill="#1500ff"  onAction="#idatziZati">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="89.0" prefWidth="150.0" text="7" onAction="#idatziZazpi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="148.0" prefWidth="150.0" text="8" onAction="#idatziZortzi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="164.0" prefWidth="150.0" text="9" onAction="#idatziBederatzi">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox prefHeight="80.0" prefWidth="600.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="x" textFill="#1500ff"  onAction="#idatziBider">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="0"  onAction="#idatziZero">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="/" textFill="#f13006"  onAction="#idatziBarra">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="150.0" text="=" textFill="#1500ff" onAction="#ariketaEgin">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
