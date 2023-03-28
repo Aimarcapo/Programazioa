@@ -52,7 +52,10 @@ public class Zatikia {
     public String toString() {
         return "[" + zenbakitzailea + "/" + izendatzailea + "]";
     }
-
+    public static Zatikia kendu(Zatikia zat1, Zatikia zat2){
+        Zatikia emaitza = new Zatikia(((zat1.getZenbakitzailea()*zat2.getIzendatzailea())-(zat2.getZenbakitzailea()*zat1.getIzendatzailea())), (zat1.getIzendatzailea()*zat2.getIzendatzailea()));
+        return emaitza;
+    }
     /* BESTELAKO METODOAK */
     /** Metodo honek, bi zatikien arteko biderketaren emaitza bueltatzen du */
     public static Zatikia biderkatu(Zatikia zat1, Zatikia zat2) {
@@ -71,10 +74,9 @@ public class Zatikia {
     }
 
     /** Metodo honek, zatiki bat gehitzen dio erabilitako zatikiari */
-    public void batu(Zatikia besteZatBat) {
-        this.setZenbakitzailea((this.getZenbakitzailea() * besteZatBat.getIzendatzailea())
-                + (besteZatBat.getZenbakitzailea() * this.getIzendatzailea()));
-        this.setIzendatzailea(this.getIzendatzailea() * besteZatBat.getIzendatzailea());
+    public static Zatikia zatitu(Zatikia zat1, Zatikia zat2){
+        Zatikia emaitza = new Zatikia((zat1.getZenbakitzailea()*zat2.getIzendatzailea()), (zat1.getIzendatzailea()*zat2.getZenbakitzailea()));
+        return emaitza;
     }
 
     /** Metodo honek, zatiki baten hamartar baliokidea bueltatzen du */

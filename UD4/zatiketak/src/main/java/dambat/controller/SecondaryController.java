@@ -1,7 +1,8 @@
-package dambat;
+package dambat.controller;
 
 import java.io.IOException;
 
+import dambat.App;
 import javafx.fxml.FXML;
 
 public class SecondaryController {
